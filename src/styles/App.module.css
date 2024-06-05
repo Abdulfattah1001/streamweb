@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.index{
+    position: relative;
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.logo{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo p{
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2.5rem;
+}
+
+.content h2{
+    color: white;
+    font-weight: bold;
+    font-size: 2.0rem;
+}
+
+.content div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    width: 50%;
+}
+
+.content div h3{
+    margin-bottom: 2.0rem;
+    color: white;
+    font-weight: bold;
+}
+
+.content div button{
+    background: white;
+    color: black;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.content div button:hover{
+    cursor: pointer;
+}
+
+.content div p{
+    font-size: 12px;
+    color: white;
+}
+
+.content div h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.or{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.or::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    width: 45%;
+    background: white;
+}
+
+.or::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 45%;
+    right: 0;
+    background-color: white;
+}

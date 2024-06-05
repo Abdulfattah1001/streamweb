@@ -1,0 +1,62 @@
+.login{
+    position: relative;
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logindiv{
+    padding: 10px;
+    outline: 1px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 30%;
+    height: min-content;
+}
+
+.logindiv form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logindiv form div{
+    position: relative;
+    width: 80%;
+    height: max-content;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    
+}
+
+
+.logindiv form div input{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    padding: 10px;
+    outline: 0px;
+    border: 0px;
+    color: black;
+}
+
+
+.logindiv form div button{
+    background: black;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: 2px solid white;
+    border: 0px;
+    align-self: center;
+}
