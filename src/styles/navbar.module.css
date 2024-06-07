@@ -3,17 +3,17 @@
     padding: 0px;
     border: 0px;
     box-sizing: border-box;
-    color: black;
+    color: white;
     font-size: 24px;
 }
 
 .wrapper{
-    background-color: black;
+    background-color: rgb(54, 42, 42);
     height: 100vh;
 }
 
 .wrapper .header{
-    background: black;
+    background: rgb(70, 67, 67);
     height: 150px;
     color: white;
     padding-top: 10px;

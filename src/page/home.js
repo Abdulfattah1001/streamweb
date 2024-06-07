@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBookSkull, faClose, faHandsBound, faHome, faMessage, faNoteSticky, faPerson, faSchool, faSearch, faStethoscope} from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState, React } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SwipeableDrawer } from '@mui/material';
+import { Drawer, SwipeableDrawer } from '@mui/material';
 import NavBar from '../components/navbar';
 
 
@@ -63,7 +63,9 @@ export default function  Home(){
 
             <div className={styles.body}>
                 <div className={styles.leftbody}>
-                    
+                    <Drawer variant='persistent' open={true}  onClose={()=>openNavBar(false)}>
+                        <NavBar />
+                    </Drawer>
                 </div>
 
                 <div className={styles.mainbody}>
