@@ -22,5 +22,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const firestore = (app);
 
-export default auth;
+/**
+ * @property {Auth} auth
+ */
+
+export {
+  auth,
+  firestore
+}

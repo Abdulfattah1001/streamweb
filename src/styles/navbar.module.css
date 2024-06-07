@@ -3,11 +3,73 @@
     padding: 0px;
     border: 0px;
     box-sizing: border-box;
+    color: black;
+    font-size: 24px;
 }
 
 .wrapper{
     background-color: black;
-    width: 200px;
     height: 100vh;
+}
+
+.wrapper .header{
+    background: black;
+    height: 150px;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: 1px solid white;
+}
+
+.icon{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header p{
+    font-size: 14px;
+}
+
+.header p:last-child{
+    font-style: italic;
+}
+
+.body{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.body ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+
+.body ul li{
+    padding-bottom: 10px;
+}
+
+.footer{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    padding: 5px;
+}
+
+.footer p{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
 }

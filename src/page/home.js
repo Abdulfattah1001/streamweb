@@ -1,22 +1,27 @@
 import Post from '../components/post';
 import styles from '../styles/home.module.css';
-import auth from '../firebase.config';
+import {auth} from '../firebase.config';
 import { onAuthStateChanged, signOut } from 'firebase/auth';  
 import post from '../lib/dummy';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBookSkull, faClose, faHandsBound, faHome, faMessage, faNoteSticky, faPerson, faSchool, faSearch, faStethoscope} from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SwipeableDrawer } from '@mui/material';
+import React from 'react';
+import NavBar from '../components/navbar';
 
 
 export default function  Home(){
     const navigate = useNavigate();
     let posts = post;
+    let anchor = 'left';
     let [isLoggedIn,setIsLogIn] = useState(false);
+    let [open, setOpen] = useState(false);
+    let [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-
-    const logOut = ()=>{
-        signOut(auth).then(()=>setIsLogIn(false));
+    const logOut = () => {
+        signOut(auth).then(() => setIsLogIn(false));
     }
 
     useEffect(function(){
@@ -25,13 +30,27 @@ export default function  Home(){
                 setIsLogIn(true);
             }else{
                 setIsLogIn(false);
-                window.location.href = '/login'
+                //window.location.href = '/login'
             }
         })
+
+        const handleScreen = ()=>{
+            setScreenWidth(window.innerWidth);
+        }
+
+       return ()=>{
+        window.addEventListener('resize', handleScreen);
+    }
+
     },[]);
 
     const message = ()=>{
         navigate("/message");
+
+    }
+
+    const openNavBar = (isOpen) =>{
+        setOpen(isOpen);
     }
 
     return(
@@ -49,7 +68,11 @@ export default function  Home(){
                 <div className={styles.left}>
                     <ul>
                         <li>Stream</li>
-                        <li><FontAwesomeIcon icon={faHome} className={styles.icon}/><span>Home</span></li>
+                        <SwipeableDrawer anchor={anchor} open={open} onClose={()=>openNavBar(false)}>
+                            <NavBar/>
+                        </SwipeableDrawer>
+
+                        <li onClick={screenWidth < 768 ? () => openNavBar(true) : null}><FontAwesomeIcon icon={faHome} className={styles.icon}/><span>Home</span></li>
                         <li> <FontAwesomeIcon icon={faMessage} className={styles.icon} onClick={message}/><span>Message</span></li>
                         <li><FontAwesomeIcon icon={faBookSkull} className={styles.icon}/><span>Notification</span></li>
                         <li><FontAwesomeIcon icon={faSearch} className={styles.icon}/><span>Explore</span></li>

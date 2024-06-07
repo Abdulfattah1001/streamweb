@@ -1,7 +1,7 @@
 import style from './styles/App.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGoogle} from '@fortawesome/free-brands-svg-icons'
-import auth from './firebase.config';
+import {auth} from './firebase.config';
 import {onAuthStateChanged} from 'firebase/auth';
 import { useEffect, useState } from 'react';
 
