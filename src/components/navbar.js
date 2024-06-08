@@ -11,7 +11,9 @@ export default  function NavBar(){
     const logOut = () => {
         signOut(auth).then(()=>{
             navigate("/login");
-        });
+        }).catch((err)=>{
+            console.log("err", err.message);
+        })
     }
 
     return(
@@ -29,7 +31,7 @@ export default  function NavBar(){
                     <li>Home</li>
                     <li>Academics</li>
                     <li>Settings</li>
-                    <li onClick={()=>logOut}>Log out</li>
+                    <li onClick={logOut}>Log out</li>
                 </ul>
             </div>
             <div className={styles.footer}>

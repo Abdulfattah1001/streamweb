@@ -63,6 +63,10 @@
     padding-bottom: 10px;
 }
 
+.body ul li:hover{
+    cursor: pointer;
+}
+
 .footer{
     position: absolute;
     width: 100%;
