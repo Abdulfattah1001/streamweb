@@ -49,7 +49,7 @@ export default function  Home(){
     return(
         <section>
            <header className={styles.header}>
-                <Avatar onClick={screenWidth < 468  ? ()=> openNavBar(true) : screenWidth < 900 ? ()=> openNavBar(true) : null} srcSet='https://github.com/Abdulfattah1001/streamweb/blob/main/public/1.jpg'/>
+                <Avatar alt='Profile picture' src="1.jpg" onClick={screenWidth < 468  ? ()=> openNavBar(true) : screenWidth < 900 ? ()=> openNavBar(true) : null}/>
 
                 <span>Stream</span>
 
@@ -63,7 +63,7 @@ export default function  Home(){
 
             <div className={styles.body}>
                 <div className={styles.leftbody}>
-                    <SwipeableDrawer onClose={()=>openNavBar(false)} open={open}>
+                    <SwipeableDrawer onOpen={()=>openNavBar(true)} onClose={()=>openNavBar(false)} open={open}>
                         <NavBar />
                     </SwipeableDrawer>
                 </div>

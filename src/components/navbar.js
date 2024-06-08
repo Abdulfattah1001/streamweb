@@ -1,12 +1,14 @@
+import { Avatar } from '@mui/material'
 import styles from '../styles/navbar.module.css'
+import { useNavigate } from 'react-router-dom'
+
 
 export default  function NavBar(){
+    let navigate = useNavigate();
     return(
         <div className={styles.wrapper}>
             <div className={styles.header}>
-                <div className={styles.icon}>
-
-                </div>
+               <Avatar src='1.jpg' onClick={()=>navigate("/profile")}/>
 
                 <div>
                     <p>Abdulfattah Ameen</p>
