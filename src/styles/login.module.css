@@ -68,13 +68,12 @@
     }
 
     .logindiv{
-        width: 100%;
+        width: 95%;
         padding: 5px;
     }
 
     .logindiv form{
         width: 100%;
-        padding: 5px;
     }
 
 }
