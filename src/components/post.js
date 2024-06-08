@@ -1,10 +1,18 @@
 import styles from '../styles/post.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMessage, faRepeat, faShare, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 export default function Post(post,index){
+    let navigate = useNavigate();
     return(
-        <div className={styles.post}>
+        <div onClick={()=>{
+            navigate("/post/details", {
+                state:{
+                    "post":post
+                },replace:true
+            })
+        }} className={styles.post}>
             <div className={styles.header}>
                 <div>
                     <img alt='profile' src={post.urlToImage} />

@@ -4,10 +4,13 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase.config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { SwipeableDrawer } from '@mui/material';
+import { List, SwipeableDrawer } from '@mui/material';
 import NavBar from '../components/navbar';
+import message from '../lib/messageDummy';
+import RecentMessageItem from '../components/recentmessage';
 
 export default function Message(){
+    let msg = message;
 
     let [open, setOpen] = useState(false);
     let [isLoggedIn,setIsLogIn] = useState(false);
@@ -34,7 +37,6 @@ export default function Message(){
        return ()=>{
         window.addEventListener('resize', handleScreen);
     }
-
     },[]);
 
     return(
@@ -56,7 +58,15 @@ export default function Message(){
 
             </header>
 
-            <div></div>
+            <div className={styles.messageListWrapper}>
+                <List>
+                    {
+                        msg.map(function(message,index){
+                            return RecentMessageItem(message, index)
+                        })
+                    }
+                </List>
+            </div>
         </section>
     )
 }

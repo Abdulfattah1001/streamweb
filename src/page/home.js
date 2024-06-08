@@ -4,10 +4,10 @@ import {auth} from '../firebase.config';
 import { onAuthStateChanged, signOut } from 'firebase/auth';  
 import post from '../lib/dummy';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBell, faBookSkull, faClose, faHandsBound, faHome, faMessage, faNoteSticky, faPerson, faSchool, faSearch, faStethoscope} from '@fortawesome/free-solid-svg-icons'
+import {faAdd, faBell, faBookSkull, faClose, faHandsBound, faHome, faMessage, faNoteSticky, faPerson, faSchool, faSearch, faStethoscope} from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState, React } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BottomNavigation, BottomNavigationAction, Drawer, SwipeableDrawer } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction, Drawer, Fab, SwipeableDrawer } from '@mui/material';
 import NavBar from '../components/navbar';
 
 
@@ -74,6 +74,16 @@ export default function  Home(){
                             return Post(post,index);
                         })
                     }
+
+                    <Fab onClick={()=>navigate("/post/compose")} size='small' sx={
+                        {
+                            position:'fixed',
+                            bottom: '20px',
+                            right:'20px'
+                        }
+                    } color='primary' aria-label='add' >
+                        <FontAwesomeIcon icon={faAdd} />
+                    </Fab>
 
                 </div>
 
