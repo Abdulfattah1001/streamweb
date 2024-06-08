@@ -67,6 +67,14 @@
     width: 100%;
 }
 
+.content video{
+    box-sizing: border-box;
+    width: calc(100vw - 25px);
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
 .bottom{
     height: 1.8rem;
     width: 100%;

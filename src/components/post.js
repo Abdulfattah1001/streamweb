@@ -28,17 +28,13 @@ export default function Post(post,index){
             <div className={styles.content}>
                 <p>{post.content}</p>
                 {
-                    post.content_image ? <img height={320} alt='content' src={post.content_image} />
-                    :
-                    null
+                    post.content_image && <img height={320} alt='content' src={post.content_image} />
                 }
 
                 {
-                    post.url_to_media ? <video height={320} poster={post.url_to_media} controls>
+                    post.url_to_media && <video  height={320} poster={post.url_to_media} controls>
                         <source  src={post.url_to_media} type='video/mp4' />
                     </video>
-                    :
-                    null
                 }
             </div>
             <div className={styles.bottom}>
