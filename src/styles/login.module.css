@@ -28,12 +28,12 @@
 .logindiv form div{
     position: relative;
     width: 80%;
+    font-size: 18px;
     height: max-content;
     background: white;
     margin-bottom: 10px;
     border-radius: 10px;
     box-sizing: border-box;
-    
 }
 
 
@@ -68,7 +68,7 @@
     }
 
     .logindiv{
-        width: 80%;
+        width: 95%;
         padding: 5px;
     }
 
@@ -76,6 +76,7 @@
         width: 100%;
         padding: 5px;
     }
+
 }
 
 @media screen and (min-width: 480px) and (max-width:840px){
