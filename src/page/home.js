@@ -19,10 +19,6 @@ export default function  Home(){
     let [open, setOpen] = useState(false);
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-    const logOut = () => {
-        signOut(auth).then(() => setIsLogIn(false));
-    }
-
     useEffect(function(){
         async function fetch_post(id){
 

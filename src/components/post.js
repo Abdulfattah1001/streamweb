@@ -27,7 +27,17 @@ export default function Post(post,index){
             </div>
             <div className={styles.content}>
                 <p>{post.content}</p>
-                <img alt='content' src={post.content_image} />
+                {
+                    post.content_image ? <img alt='content' src={post.content_image} />
+                    :
+                    null
+                }
+
+                {
+                    post.url_to_media ? <video autoPlay={true} src={post.url_to_media} />
+                    :
+                    null
+                }
             </div>
             <div className={styles.bottom}>
                 <FontAwesomeIcon icon={faThumbsUp}/>

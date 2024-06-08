@@ -65,6 +65,7 @@
     .login{
         position: relative;
         width: 100vw;
+        padding: 0px;
     }
 
     .logindiv{

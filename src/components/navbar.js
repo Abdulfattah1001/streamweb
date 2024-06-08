@@ -1,10 +1,19 @@
 import { Avatar } from '@mui/material'
 import styles from '../styles/navbar.module.css'
 import { useNavigate } from 'react-router-dom'
+import { auth } from '../firebase.config';
+import { signOut } from 'firebase/auth';
 
 
 export default  function NavBar(){
     let navigate = useNavigate();
+
+    const logOut = () => {
+        signOut(auth).then(()=>{
+            navigate("/login");
+        });
+    }
+
     return(
         <div className={styles.wrapper}>
             <div className={styles.header}>
@@ -20,7 +29,7 @@ export default  function NavBar(){
                     <li>Home</li>
                     <li>Academics</li>
                     <li>Settings</li>
-                    <li>Log out</li>
+                    <li onClick={()=>logOut}>Log out</li>
                 </ul>
             </div>
             <div className={styles.footer}>
