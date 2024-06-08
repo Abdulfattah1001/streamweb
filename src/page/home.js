@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAdd, faBell, faBookSkull, faClose, faHandsBound, faHome, faMessage, faNoteSticky, faPerson, faSchool, faSearch, faStethoscope} from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState, React } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BottomNavigation, BottomNavigationAction, Drawer, Fab, SwipeableDrawer } from '@mui/material';
+import { Avatar, BottomNavigation, BottomNavigationAction, Drawer, Fab, SwipeableDrawer } from '@mui/material';
 import NavBar from '../components/navbar';
 
 
@@ -49,7 +49,7 @@ export default function  Home(){
     return(
         <section>
            <header className={styles.header}>
-                <div onClick={screenWidth < 468  ? ()=> openNavBar(true) : screenWidth < 900 ? ()=> openNavBar(true) : null} className={styles.usericon}></div>
+                <Avatar onClick={screenWidth < 468  ? ()=> openNavBar(true) : screenWidth < 900 ? ()=> openNavBar(true) : null} srcSet='https://github.com/Abdulfattah1001/streamweb/blob/main/public/1.jpg'/>
 
                 <span>Stream</span>
 

@@ -10,7 +10,7 @@ export default function Post(post,index){
             navigate("/post/details", {
                 state:{
                     "post":post
-                },replace:true
+                },replace:false
             })
         }} className={styles.post}>
             <div className={styles.header}>
