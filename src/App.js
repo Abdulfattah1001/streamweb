@@ -4,19 +4,16 @@ import {faGoogle} from '@fortawesome/free-brands-svg-icons'
 import {auth} from './firebase.config';
 import {onAuthStateChanged} from 'firebase/auth';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function App(){
 
-  const [isLoggedIn, setIsLogIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(function(){
     onAuthStateChanged(auth, (user)=>{
       if(user){
-        window.alert("You're logged in before")
-        setIsLogIn(true);
-      }else{
-        window.alert("You're not log in");
-        setIsLogIn(false);
+        navigate("/home");
       }
     })
   },[])
@@ -39,7 +36,7 @@ export default function App(){
           <p>By signing up, you agree to the Terms of Service and Privacy Policy, including cookies use</p>
 
           <h4>Already have an account?</h4>
-          <button>Sign in</button>
+          <button onClick={()=>navigate("/login")}>Sign in</button>
         </div>
       </div>
       <footer></footer>

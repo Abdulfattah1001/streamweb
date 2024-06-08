@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Post(post,index){
     let navigate = useNavigate();
+    post = post.post;
+    console.log(post)
     return(
         <div onClick={()=>{
             navigate("/post/details", {
@@ -15,17 +17,17 @@ export default function Post(post,index){
         }} className={styles.post}>
             <div className={styles.header}>
                 <div>
-                    <img alt='profile' src={post.urlToImage} />
+                    <img alt='profile' src={post.author_image} />
                 </div>
 
                 <span className={styles.name}>
                     <p>Stream</p>
-                    <p>@{post.author}</p>
+                    <p>@{post.author_name}</p>
                 </span>
             </div>
             <div className={styles.content}>
                 <p>{post.content}</p>
-                <img alt='content' src={post.urlToImage} />
+                <img alt='content' src={post.content_image} />
             </div>
             <div className={styles.bottom}>
                 <FontAwesomeIcon icon={faThumbsUp}/>

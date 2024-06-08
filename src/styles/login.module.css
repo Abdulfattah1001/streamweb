@@ -60,3 +60,20 @@
     border: 0px;
     align-self: center;
 }
+
+@media screen and (min-width: 480px) and (max-width:840px){
+    .login{
+        position: relative;
+        width: 100vw;
+    }
+
+    .logindiv{
+        width: 80%;
+        padding: 5px;
+    }
+
+    .logindiv form{
+        width: 100%;
+        padding: 5px;
+    }
+}

@@ -6,6 +6,7 @@ import { Avatar } from '@mui/material';
 export default function Profile(){
 
     let posts = post;
+    console.log(posts)
 
     return(
         <section>
@@ -34,7 +35,9 @@ export default function Profile(){
             <div className={styles.body}>
                 {
                     posts.map(function(post,index){
-                        return Post(post, index);
+                        return (
+                            <Post post={post} index={index} />
+                        )
                     })
                 }
             </div>

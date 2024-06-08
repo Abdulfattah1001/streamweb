@@ -13,7 +13,7 @@ import NavBar from '../components/navbar';
 
 export default function  Home(){
     const navigate = useNavigate();
-    let posts = post;
+    let [posts,setPosts] = useState(null);
     let anchor = 'left';
     let [isLoggedIn,setIsLogIn] = useState(false);
     let [open, setOpen] = useState(false);
@@ -24,14 +24,22 @@ export default function  Home(){
     }
 
     useEffect(function(){
-        onAuthStateChanged(auth, (user)=>{
+        async function fetch_post(id){
+
+            const response = await fetch("https://stream-serve.onrender.com/api/posts?user="+id);
+
+            let result=await response.json()
+
+            return result;
+        }
+
+        onAuthStateChanged(auth, async(user)=>{
             if(user){
-                setIsLogIn(true);
+                setPosts(await fetch_post(user.uid));
             }else{
-                setIsLogIn(false);
+                navigate("/login");
             }
         })
-
         const handleScreen = ()=>{
             setScreenWidth(window.innerWidth);
         }
@@ -39,16 +47,17 @@ export default function  Home(){
        return ()=>{
         window.addEventListener('resize', handleScreen);
     }
-
     },[]);
+
 
     const openNavBar = (isOpen) =>{
         setOpen(isOpen);
     }
 
-    return(
+    if(posts){
+      return(
         <section>
-           <header className={styles.header}>
+            <header className={styles.header}>
                 <Avatar alt='Profile picture' src="1.jpg" onClick={screenWidth < 468  ? ()=> openNavBar(true) : screenWidth < 900 ? ()=> openNavBar(true) : null}/>
 
                 <span>Stream</span>
@@ -70,8 +79,10 @@ export default function  Home(){
 
                 <div className={styles.mainbody}>
                     {
-                        posts.map(function(post,index){
-                            return Post(post,index);
+                        posts.map(function(pos,index){
+                            return (
+                                <Post post={pos} index={index}/>
+                            );
                         })
                     }
 
@@ -94,5 +105,9 @@ export default function  Home(){
             </div>
             
         </section>
+    )}
+
+    return (
+        <div>LOADING</div>
     )
 }

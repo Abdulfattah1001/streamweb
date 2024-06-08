@@ -29,6 +29,7 @@ export default function PostDetails(post_object, index){
         {"name":"Ameen Abdulfattah","comment":"That's good news for us",},
         {"name":"Ameen Abdulfattah","comment":"That's good news for us",},
     ]
+    console.log(post_object);
     return (
         <section className={styles.body}>
             <div className={styles.leftBody}></div>
@@ -36,9 +37,7 @@ export default function PostDetails(post_object, index){
            <div className={styles.mainBody}>
 
            <div className={styles.postHeader}>
-                {
-                    Post(post_obj.state.post, 1)
-                }
+                <Post post={post_obj.state.post} index={1} />
             </div>
 
             <div className={styles.commentwrapper}>

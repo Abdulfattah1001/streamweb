@@ -19,6 +19,7 @@ export default function Login(){
             navigate("/home");
         }).catch((err)=>{console.log(`Error occured: ${err.message}`)});
     }
+
     return(
         <section className={styles.login}>
             <div className={styles.logindiv}>
