@@ -82,7 +82,7 @@ export default function  Home(){
                         })
                     }
 
-                    <Fab onClick={()=>navigate("/post/compose")} size='small' sx={
+                    {/* <Fab onClick={()=>navigate("/post/compose")} size='small' sx={
                         {
                             position:'fixed',
                             bottom: '20px',
@@ -90,7 +90,7 @@ export default function  Home(){
                         }
                     } color='primary' aria-label='add' >
                         <FontAwesomeIcon icon={faAdd} />
-                    </Fab>
+                    </Fab> */}
 
                 </div>
 

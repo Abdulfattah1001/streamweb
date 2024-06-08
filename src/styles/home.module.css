@@ -4,6 +4,7 @@ body{
     width: 100vw;
     height: auto;
     background-color: rgb(41, 39, 39);
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar{
