@@ -75,6 +75,16 @@
 
     .logindiv form{
         width: 100%;
+        padding: 0px;
+    }
+
+    .logindiv form div{
+        width: calc(100% - 10px);
+        height: min-content
+    }
+
+    .login form div input{
+        padding: 5px;
     }
 
 }
