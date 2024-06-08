@@ -34,7 +34,7 @@ export default function Post(post,index){
                 }
 
                 {
-                    post.url_to_media ? <video  width={460} height={320} poster={post.url_to_media} controls>
+                    post.url_to_media ? <video height={320} poster={post.url_to_media} controls>
                         <source  src={post.url_to_media} type='video/mp4' />
                     </video>
                     :
