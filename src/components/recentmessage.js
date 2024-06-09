@@ -8,16 +8,16 @@ export default function RecentMessageItem(recentMessage,index){
             <div className={styles.wrapper}>
 
                 <div>
-                    <Avatar />
+                    <Avatar src={recentMessage.recentMessage.author_foreground} />
 
                     <div className={styles.content}>
-                        <span className={styles.username}>{recentMessage.name}</span>
-                        <span className={styles.lastmessage}>{recentMessage.lastMessage}</span>
+                        <span className={styles.username}>{recentMessage.recentMessage.author_name}</span>
+                        <span className={styles.lastmessage}>{recentMessage.recentMessage.content}</span>
                     </div>
 
                 </div>
 
-                <span className={styles.date}>{recentMessage.date}</span>
+                <span className={styles.date}>2024-02-01</span>
 
             </div>
 

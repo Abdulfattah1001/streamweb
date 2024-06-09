@@ -9,6 +9,7 @@ import { useEffect, useState, React } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Avatar, BottomNavigation, BottomNavigationAction, Drawer, Fab, SwipeableDrawer } from '@mui/material';
 import NavBar from '../components/navbar';
+import { fetchRecentMessage } from '../lib/message';
 
 
 export default function  Home(){
@@ -20,6 +21,7 @@ export default function  Home(){
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     useEffect(function(){
+        
         async function fetch_post(id){
 
             const response = await fetch("https://stream-serve.onrender.com/api/posts?user="+id);

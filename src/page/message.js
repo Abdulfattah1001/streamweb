@@ -8,23 +8,25 @@ import { List, SwipeableDrawer } from '@mui/material';
 import NavBar from '../components/navbar';
 import message from '../lib/messageDummy';
 import RecentMessageItem from '../components/recentmessage';
+import { fetchRecentMessage } from '../lib/message';
 
 export default function Message(){
-    let msg = message;
+    //let msg = message;
 
     let [open, setOpen] = useState(false);
     let [isLoggedIn,setIsLogIn] = useState(false);
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    let [msg, setMsg] = useState();
 
-    const openNavBar = (isOpen) =>{
-        setOpen(isOpen);
-    }
+    const openNavBar = (isOpen) =>{setOpen(isOpen);}
 
 
     useEffect(function(){
-        onAuthStateChanged(auth, (user)=>{
+        onAuthStateChanged(auth, async (user)=>{
             if(user){
                 setIsLogIn(true);
+
+                setMsg(await fetchRecentMessage(user.uid));
             }else{
                 setIsLogIn(false);
             }
@@ -61,8 +63,11 @@ export default function Message(){
             <div className={styles.messageListWrapper}>
                 <List>
                     {
-                        msg.map(function(message,index){
-                            return RecentMessageItem(message, index)
+                        msg && msg.map(function(message,index){
+                            //return (RecentMessageItem <recentMessage={message} index={index} />)
+                            return (
+                                <RecentMessageItem recentMessage={message} index={index} />
+                            )
                         })
                     }
                 </List>
