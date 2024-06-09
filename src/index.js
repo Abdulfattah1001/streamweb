@@ -14,6 +14,7 @@ import Academics from './page/academics';
 import Notification from './page/notification';
 import PostDetails from './page/post_details';
 import PostCompose from './page/post_compose';
+import MessageCompose from './page/messageCompose';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
       <Route path='/login' element={<Login />} />
       <Route path='/home' element={<Home />} />
       <Route path='/message' element={<Message />}/>
+      <Route path='/message/compose' element={<MessageCompose />}/>
       <Route path='/profile' element={<Profile />}/>
       <Route path='/settings' element={<Settings />}/>
       <Route path='/academics' element={<Academics />}/>

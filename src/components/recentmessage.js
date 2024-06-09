@@ -1,9 +1,22 @@
+import { useNavigate } from 'react-router-dom';
 import styles from '../styles/recentmsg.module.css';
 import { Avatar, ListItemButton, ListItemText, ListSubheader } from "@mui/material"
 
 export default function RecentMessageItem(recentMessage,index){
+    let navigate = useNavigate()
+    console.log(recentMessage.recentMessage);
+
+    let nav = ()=>{
+        navigate("/message/compose",{
+            state:{
+                "message": recentMessage.recentMessage
+            }
+        } )
+    }
+
+
     return (
-        <ListItemButton alignItems='flex-start'>
+        <ListItemButton onClick={nav} alignItems='flex-start'>
 
             <div className={styles.wrapper}>
 
