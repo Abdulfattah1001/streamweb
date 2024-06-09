@@ -6,10 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { SwipeableDrawer } from "@mui/material";
 import NavBar from "../components/navbar";
+import { useNavigate } from "react-router-dom";
 
 export default function Notification(){
 
     let [open, setOpen] = useState(false);
+    let navigate = useNavigate();
     let [isLoggedIn,setIsLogIn] = useState(false);
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -24,6 +26,9 @@ export default function Notification(){
                 setIsLogIn(true);
             }else{
                 setIsLogIn(false);
+                navigate("/login",{
+                    replace:true
+                })
             }
         })
 

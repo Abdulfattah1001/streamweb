@@ -1,4 +1,8 @@
 export default class User{
+    /**
+     * @param {Object} user 
+     */
+     
     constructor(user){
         this.name = user.firstname+" "+user.lastname;
         this.email = user.email;

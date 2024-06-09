@@ -1,11 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/recentmsg.module.css';
 import { Avatar, ListItemButton, ListItemText, ListSubheader } from "@mui/material"
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase.config';
 
 export default function RecentMessageItem(recentMessage,index){
-    let navigate = useNavigate()
-    console.log(recentMessage.recentMessage);
 
+
+    let navigate = useNavigate()
+
+    useEffect(function(){
+        onAuthStateChanged(auth, function(user){
+            if(user == null){
+                navigate("/login",{
+                    replace:true
+                })
+            }
+        })
+    },[])
+    
     let nav = ()=>{
         navigate("/message/compose",{
             state:{
@@ -13,8 +27,6 @@ export default function RecentMessageItem(recentMessage,index){
             }
         } )
     }
-
-
     return (
         <ListItemButton onClick={nav} alignItems='flex-start'>
 

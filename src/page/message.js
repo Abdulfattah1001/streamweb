@@ -9,9 +9,10 @@ import NavBar from '../components/navbar';
 import message from '../lib/messageDummy';
 import RecentMessageItem from '../components/recentmessage';
 import { fetchRecentMessage } from '../lib/message';
+import { useNavigate } from 'react-router-dom';
 
 export default function Message(){
-    //let msg = message;
+    let navigate = useNavigate();
 
     let [open, setOpen] = useState(false);
     let [isLoggedIn,setIsLogIn] = useState(false);
@@ -25,10 +26,12 @@ export default function Message(){
         onAuthStateChanged(auth, async (user)=>{
             if(user){
                 setIsLogIn(true);
-
                 setMsg(await fetchRecentMessage(user.uid));
             }else{
                 setIsLogIn(false);
+                navigate("/login",{
+                    replace:  true
+                })
             }
         })
 

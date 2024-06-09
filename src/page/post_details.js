@@ -29,7 +29,7 @@ export default function PostDetails(post_object, index){
         {"name":"Ameen Abdulfattah","comment":"That's good news for us",},
         {"name":"Ameen Abdulfattah","comment":"That's good news for us",},
     ]
-    console.log(post_object);
+    
     return (
         <section className={styles.body}>
             <div className={styles.leftBody}></div>
