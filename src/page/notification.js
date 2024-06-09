@@ -7,6 +7,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { SwipeableDrawer } from "@mui/material";
 import NavBar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
+import BottomNav from "../components/bottomnav";
 
 export default function Notification(){
 
@@ -62,6 +63,10 @@ export default function Notification(){
             </header>
 
             <div></div>
+
+            <div>
+                <BottomNav />
+            </div>
         </section>
     )
 }

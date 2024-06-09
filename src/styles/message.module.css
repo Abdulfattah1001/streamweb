@@ -1,3 +1,9 @@
+.section{
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 .header{
     position: fixed;
     z-index: 10;
@@ -28,6 +34,9 @@
 }
 
 .messageListWrapper{
+    position: relative;
     margin-top: 2.5rem;
     padding-top: 10px;
+    width: 100vw;
+    overflow-x: hidden;
 }

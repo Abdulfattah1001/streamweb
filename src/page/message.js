@@ -10,6 +10,7 @@ import message from '../lib/messageDummy';
 import RecentMessageItem from '../components/recentmessage';
 import { fetchRecentMessage } from '../lib/message';
 import { useNavigate } from 'react-router-dom';
+import BottomNav from '../components/bottomnav';
 
 export default function Message(){
     let navigate = useNavigate();
@@ -74,6 +75,10 @@ export default function Message(){
                         })
                     }
                 </List>
+            </div>
+
+            <div>
+                <BottomNav />
             </div>
         </section>
     )

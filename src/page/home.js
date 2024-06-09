@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { Avatar, BottomNavigation, BottomNavigationAction, Drawer, Fab, SwipeableDrawer } from '@mui/material';
 import NavBar from '../components/navbar';
 import { fetchRecentMessage } from '../lib/message';
+import BottomNav from '../components/bottomnav';
 
 
 export default function  Home(){
@@ -87,12 +88,13 @@ export default function  Home(){
                     <Fab onClick={()=>navigate("/post/compose")} size='small' sx={
                         {
                             position:'fixed',
-                            bottom: '20px',
-                            right:'20px'
+                            bottom: '60px',
+                            right:'20px',
                         }
                     } color='primary' aria-label='add' >
                         <FontAwesomeIcon icon={faAdd} />
                     </Fab>
+
 
                 </div>
 
@@ -101,6 +103,9 @@ export default function  Home(){
                 </div>
 
             </div>
+
+            <div className={styles.bottomNav}>
+                        <BottomNav />                    </div>
             
         </section>
     )}
