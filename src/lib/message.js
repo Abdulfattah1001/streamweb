@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, orderBy } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, orderBy, setDoc } from 'firebase/firestore';
 import {auth, firestore} from '../firebase.config';
 
 async function fetchRecentMessage(){
@@ -43,7 +43,42 @@ async function getMessages(puid){
     return messages;
 }
 
+async function sendMessage(id, message){
+    await auth.authStateReady();
+    if(auth.currentUser!=null){
+        const uid = auth.currentUser.uid;
+        const msgRef = collection(firestore, "MESSAGES", uid, id);
+
+        await setDoc(doc(msgRef, Date.now().toString()), {
+            "author_foreground":null,
+            "author_id": uid,
+            "author_name":null,
+            "content":message,
+            "date":Date.now().toString(),
+            "isSender":true,
+            "message_id":Date.now().toString(),
+            "read_status":true,
+            "receiver_id":id,
+        });
+
+        const msgRef2 = collection(firestore, "MESSAGES", id, uid);
+
+        await setDoc(doc(msgRef2, Date.now().toString()), {
+            "author_foreground":null,
+            "author_id": id,
+            "author_name":null,
+            "content":message,
+            "date":Date.now().toString(),
+            "isSender":false,
+            "message_id":Date.now().toString(),
+            "read_status":false,
+            "receiver_id":uid,
+        });
+    }
+}
+
 export {
     getMessages,
-    fetchRecentMessage
+    fetchRecentMessage,
+    sendMessage
 }

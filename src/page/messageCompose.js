@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import styles from '../styles/messagecompose.module.css';
 import { useEffect, useState } from 'react';
-import { getMessages } from '../lib/message';
+import { getMessages, sendMessage } from '../lib/message';
 import { Avatar, Button, ListItemText } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleUp, faArrowDownAZ, faSearch, faSection } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ import { SendMessage, ReceivedMessage } from '../components/messageList';
 
 export default function MessageCompose(){
     let location = useLocation()
-    console.log(location.state.message.author_id)
+    let [content,setContent] = useState("")
     let [messages, setMessages] = useState()
 
     useEffect(function(){
@@ -36,7 +36,7 @@ export default function MessageCompose(){
                 <div className={styles.messageList}>
                     {
                         messages && messages.map(function(message, index){
-                            console.log("MESSAGES:", message)
+                            
                             if(message.isSender){
                                 return (
                                     <SendMessage message={message} />
@@ -51,8 +51,14 @@ export default function MessageCompose(){
                 </div>
 
                 <div className={styles.inputWrapper}>
-                    <textarea rows={1} placeholder='Enter your message....' />
-                    <Button endIcon={<FontAwesomeIcon icon={faArrowAltCircleUp}/>} sx={
+                    <textarea id="text" value={content} onChange={(value)=>{
+                        setContent(value.target.value)
+                    }} rows={1} placeholder='Enter your message....' />
+                    <Button onClick={()=>{
+                        if(content.length > 0){
+                            sendMessage(location.state.message.author_id, content).then(()=>setContent(""));
+                        }
+                    }} endIcon={<FontAwesomeIcon icon={faArrowAltCircleUp}/>} sx={
                         {
                             bgcolor:'blue',
                         }
