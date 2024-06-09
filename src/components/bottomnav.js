@@ -24,6 +24,7 @@ export default function BottomNav(){
                     padding:'0px'
                 }
             }  value={value} onChange={(event,value)=>{setValue(value)}} className={styles.bottom}>
+                
                 <BottomNavigationAction component={Link} to={'/'} label="Home" value="/home" icon={<FontAwesomeIcon icon={faHome}/>}/>
 
                 <BottomNavigationAction component={Link} to={'/message'} label="Message" value = '/message' icon={<FontAwesomeIcon icon={faMessage}/>}/>

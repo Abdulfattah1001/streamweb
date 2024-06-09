@@ -1,7 +1,14 @@
+import AcademicsBottomNavigation from "../components/academicsBottomNavBar";
+
 export default function AcademicsDashboard(){
     return (
-        <div>
-            <p>Academics Dashboard Page</p>
-        </div>
+        <section style={
+            {
+                width:'100vw',
+                height:'100vh'
+            }
+        }>
+            <AcademicsBottomNavigation />
+        </section>
     )
 }

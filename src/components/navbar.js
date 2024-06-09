@@ -13,12 +13,6 @@ export default  function NavBar(){
     let [user, setUser] = useState();
 
     useEffect(function(){
-
-        const getUser = async ()=>{
-            
-        }
-
-
         onAuthStateChanged(auth, async(u)=>{
             if(u){
                 const docRef = doc(firestore, "USER",`${u.uid}`);
@@ -49,7 +43,11 @@ export default  function NavBar(){
             <div className={styles.body}>
                 <ul>
                     <li>Home</li>
-                    <li>Academics</li>
+                    <li onClick={()=>{navigate("/academics",{
+                        state:{
+                            "user":user
+                        }
+                    })}}>Academics</li>
                     <li>Settings</li>
                     <li onClick={logOut}>Log out</li>
                 </ul>

@@ -17,7 +17,9 @@ export default function Login(){
         await signInWithEmailAndPassword(auth, email, password).then((user)=>{
             setIsLogIn(true);
             navigate("/home");
-        }).catch((err)=>{console.log(`Error occured: ${err.message}`)});
+        }).catch((err)=>{
+            window.alert(`Error occured ${err.message}`)
+        });
     }
 
     return(

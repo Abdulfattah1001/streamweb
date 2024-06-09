@@ -1,7 +1,14 @@
+import AcademicsBottomNavigation from "../components/academicsBottomNavBar";
+
 export default function AcademicsExplore(){
     return (
-        <div>
-            <p>Academics Explore Page</p>
-        </div>
+        <section style={
+            {
+                width:'100vw',
+                height:'100vh'
+            }
+        }>
+            <AcademicsBottomNavigation />
+        </section>
     )
 }

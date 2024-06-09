@@ -15,6 +15,8 @@ import Notification from './page/notification';
 import PostDetails from './page/post_details';
 import PostCompose from './page/post_compose';
 import MessageCompose from './page/messageCompose';
+import AcademicsExplore from './page/academicExplore'
+import AcademicsDashboard from './page/academicsDashboard'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +30,8 @@ root.render(
       <Route path='/profile' element={<Profile />}/>
       <Route path='/settings' element={<Settings />}/>
       <Route path='/academics' element={<Academics />}/>
+      <Route path='/academics/explore' element={<AcademicsExplore />}/>
+      <Route path='/academics/dashboard' element={<AcademicsDashboard />}/>
       <Route path='/notification' element={<Notification />}/>
       <Route path='/post/details' element={<PostDetails />}/>
       <Route path='/post/compose' element={<PostCompose />}/>
