@@ -4,12 +4,14 @@ export default class User{
      */
      
     constructor(user){
-        this.name = user.firstname+" "+user.lastname;
+        if(user!=null){
+            this.name = user.firstname+" "+user.lastname;
         this.email = user.email;
         this.about = user.about;
         this.fisrtname = user.firstname;
         this.id= user.id;
         this.foreground = user.foreground ? user.foreground : '1.jpg';
+        }
     }
 
 

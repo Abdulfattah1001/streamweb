@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {onAuthStateChanged} from 'firebase/auth'
 import {auth,firestore} from '../firebase.config';
-import { collection, getDoc } from 'firebase/firestore';
+import { collection, doc, getDoc } from 'firebase/firestore';
 import User from '../lib/user';
 
 export default function Profile(){
@@ -18,7 +18,7 @@ export default function Profile(){
          * @param {string} id 
          */
         async function  getUserDetails(id){
-            const docRef = collection(firestore,"USER", id);
+            const docRef = doc(firestore,"USER", id);
 
             const detailsSnapshot = await getDoc(docRef);
 
