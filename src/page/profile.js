@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {onAuthStateChanged} from 'firebase/auth'
 import {auth,firestore} from '../firebase.config';
-import { collection, doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import User from '../lib/user';
 
 export default function Profile(){

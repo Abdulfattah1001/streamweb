@@ -3,6 +3,7 @@ import styles from '../styles/postcompose.module.css';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase.config';
+import { TextareaAutosize } from '@mui/material';
 
 export default function PostCompose(){
 
@@ -23,7 +24,7 @@ export default function PostCompose(){
         <section className={styles.body}>
             <div className={styles.left}></div>
             <div className={styles.main}>
-                <div className={styles.input}><textarea autoFocus="true" placeholder="What's on your mind?" type='text' rows={10}/></div>
+                <div className={styles.input}><TextareaAutosize autoFocus="true" placeholder="What's on your mind?" type='text' maxRows={30}/></div>
             </div>
             <div className={styles.right}></div>
         </section>

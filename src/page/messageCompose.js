@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styles from '../styles/messagecompose.module.css';
 import { useEffect, useState } from 'react';
 import { getMessages, sendMessage } from '../lib/message';
-import { Avatar, Button, ListItemText } from '@mui/material';
+import { Avatar, Button, ListItemText, TextareaAutosize } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleUp, faArrowDownAZ, faSearch, faSection } from '@fortawesome/free-solid-svg-icons';
 import { SendMessage, ReceivedMessage } from '../components/messageList';
@@ -61,7 +61,7 @@ export default function MessageCompose(){
                 </div>
 
                 <div className={styles.inputWrapper}>
-                    <textarea id="text" value={content} onChange={(value)=>{
+                    <TextareaAutosize maxRows={10} id="text" value={content} onChange={(value)=>{
                         setContent(value.target.value)
                     }} rows={1} placeholder='Enter your message....' />
                     <Button onClick={()=>{
