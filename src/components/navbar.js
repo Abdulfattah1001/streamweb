@@ -1,12 +1,32 @@
 import { Avatar } from '@mui/material'
 import styles from '../styles/navbar.module.css'
 import { useNavigate } from 'react-router-dom'
-import { auth } from '../firebase.config';
-import { signOut } from 'firebase/auth';
+import { auth, firestore } from '../firebase.config';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+import { getDoc, doc } from 'firebase/firestore';
+import User from '../lib/user';
 
 
 export default  function NavBar(){
     let navigate = useNavigate();
+    let [user, setUser] = useState();
+
+    useEffect(function(){
+
+        const getUser = async ()=>{
+            
+        }
+
+
+        onAuthStateChanged(auth, async(u)=>{
+            if(u){
+                const docRef = doc(firestore, "USER",`${u.uid}`);
+                const result = await getDoc(docRef);
+                setUser(new User(result.data()));
+            }
+        })
+    }, []);
 
     const logOut = () => {
         signOut(auth).then(()=>{
@@ -19,11 +39,11 @@ export default  function NavBar(){
     return(
         <div className={styles.wrapper}>
             <div className={styles.header}>
-               <Avatar src='1.jpg' onClick={()=>navigate("/profile")}/>
+               <Avatar src={user && user.getForeground()} onClick={()=>navigate("/profile")}/>
 
                 <div>
-                    <p>Abdulfattah Ameen</p>
-                    <p>aminufattah6@gmail.com</p>
+                    <p>{user && user.getNames()}</p>
+                    <p>{user && user.getEmail()}</p>
                 </div>
             </div>
             <div className={styles.body}>

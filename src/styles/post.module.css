@@ -40,12 +40,13 @@
 }
 
 .header span p:first-child{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .header span p:nth-child(2){
-    font-style: italic;
+    font-size: 14px;
+    font-style: bold italic;
 }
 
 .content{
