@@ -14,7 +14,7 @@ export default function AcademicsBottomNavigation(){
             <BottomNavigation
                 sx={{
                     bgcolor: 'black',
-                    position: 'absolute',
+                    position: 'fixed',
                     bottom:'0px',
                     left: '0px',
                     right:'0px',

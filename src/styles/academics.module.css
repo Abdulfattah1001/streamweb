@@ -1,4 +1,10 @@
 .section{
     width: 100vw;
-    height: 100vh;
+    height: auto 100vh;
+    background-color: white;
+    padding: 5px;
+}
+
+.course_wrapper{
+    margin-bottom: 2.5rem;
 }
