@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 import reportWebVitals from './reportWebVitals';
+
 import App from './App';
 import Login from './page/login';
 import Home from './page/home';
@@ -17,11 +18,13 @@ import PostCompose from './page/post_compose';
 import MessageCompose from './page/messageCompose';
 import AcademicsExplore from './page/academicExplore'
 import AcademicsDashboard from './page/academicsDashboard'
+import CreateAccount from './page/signup';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
+      <Route path='/signup' element={<CreateAccount />}/>
       <Route path='/' element={<App />} />
       <Route path='/login' element={<Login />} />
       <Route path='/home' element={<Home />} />
@@ -35,6 +38,7 @@ root.render(
       <Route path='/notification' element={<Notification />}/>
       <Route path='/post/details' element={<PostDetails />}/>
       <Route path='/post/compose' element={<PostCompose />}/>
+      
     </Routes>
   </Router>
 );

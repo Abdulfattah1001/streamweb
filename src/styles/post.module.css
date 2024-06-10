@@ -3,9 +3,9 @@
     height: min-content;
     width: 100%;
     outline: 1px solid white;
-    color: black;
     margin-bottom: 10px;
     border-radius: 10px;
+    color: white;
 }
 
 .header{
@@ -17,6 +17,7 @@
     margin-bottom: 5px;
     display: flex;
     align-items: center;
+    color: white;
 }
 
 
@@ -25,12 +26,14 @@
     height: 50px;
     border-radius: 25px;
     margin-right: 10px;
+    color: white;
 }
 
 .header div img{
     border-radius: inherit;
     width: 100%;
     height: 100%;
+    color: white;
 }
 
 .header div video{
@@ -61,7 +64,8 @@
 .content p{
     font-family: sans-serif;
     line-height: 20px;
-    font-size:  14px
+    font-size:  14px;
+    color: white;
 }
 
 .content img{
@@ -84,4 +88,5 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    color: white;
 }

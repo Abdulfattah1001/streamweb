@@ -5,6 +5,7 @@ body{
     height: auto;
     background-color: rgb(41, 39, 39);
     box-sizing: border-box;
+    color: white;
 }
 
 ::-webkit-scrollbar{
@@ -27,6 +28,7 @@ body{
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
+    color: white;
 }
 
 .usericon{
@@ -38,6 +40,7 @@ body{
 
 .header nav li{
     list-style: none;
+    color: white;
 }
 
 .body{
@@ -48,6 +51,7 @@ body{
     top: 2.5rem;
     display: flex;
     justify-content: space-evenly;
+    color: white;
 }
 
 .leftbody{
@@ -61,6 +65,7 @@ body{
     width: calc(45vw);
     padding: 5px;
     background-color: black;
+    color: white;
 }
 
 .rightbody{
@@ -90,6 +95,7 @@ body{
         height:auto 100vh;
         padding-bottom: 2.7rem;
         display: block;
+        color: white;
     }
 
     .bottomNav{

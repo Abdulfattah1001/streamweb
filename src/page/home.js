@@ -11,6 +11,7 @@ import { Avatar, BottomNavigation, BottomNavigationAction, Drawer, Fab, Swipeabl
 import NavBar from '../components/navbar';
 import { fetchRecentMessage } from '../lib/message';
 import BottomNav from '../components/bottomnav';
+import { ShimmerPostList } from 'react-shimmer-effects';
 
 
 export default function  Home(){
@@ -111,6 +112,6 @@ export default function  Home(){
     )}
 
     return (
-        <div>LOADING</div>
+        <ShimmerPostList col={1} row={10}/>
     )
 }

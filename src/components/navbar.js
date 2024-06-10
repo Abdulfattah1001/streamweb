@@ -43,11 +43,13 @@ export default  function NavBar(){
             <div className={styles.body}>
                 <ul>
                     <li>Home</li>
+                    
                     <li onClick={()=>{navigate("/academics",{
                         state:{
-                            "user":user
+                            "user":Object(user)
                         }
                     })}}>Academics</li>
+
                     <li>Settings</li>
                     <li onClick={logOut}>Log out</li>
                 </ul>
