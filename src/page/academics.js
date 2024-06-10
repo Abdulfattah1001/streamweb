@@ -6,6 +6,9 @@ import{firestore, auth} from '../firebase.config';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import CourseCardDisplay from '../components/displayCourse';
+import { AppBar, Dialog, DialogContent, DialogTitle, Fab } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAdd, faMessage } from '@fortawesome/free-solid-svg-icons';
 
 export default function Academics(){
     let [course,setCourse] = useState();
@@ -54,6 +57,15 @@ export default function Academics(){
                 }
             </div>
 
+            <Fab size='small' sx={
+                        {
+                            position:'fixed',
+                            bottom: '60px',
+                            right:'20px',
+                        }
+                    } color='primary' aria-label='add' >
+                        <FontAwesomeIcon icon={faMessage} />
+                    </Fab>
 
             <div className={styles.bottomNav}>
                 <AcademicsBottomNavigation />

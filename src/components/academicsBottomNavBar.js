@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BottomNavigation,BottomNavigationAction } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome,faSearch, faPerson} from "@fortawesome/free-solid-svg-icons";
+import { faHome,faSearch, faPerson, faBook} from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
 
@@ -29,7 +29,7 @@ export default function AcademicsBottomNavigation(){
                 <BottomNavigationAction component={Link} to={'/academics/explore'} value='/academics/explore'  label="Explore" icon={<FontAwesomeIcon icon={faSearch}/>}/>
 
 
-                <BottomNavigationAction component={Link} to={'/academics/dashboard'} value='/academics/dashboard'  label="Dashboard" icon={<FontAwesomeIcon icon={faPerson}/>}/>
+                <BottomNavigationAction component={Link} to={'/academics/dashboard'} value='/academics/dashboard'  label="Dashboard" icon={<FontAwesomeIcon icon={faBook}/>}/>
 
             </BottomNavigation>
     )
