@@ -1,0 +1,165 @@
+.body{
+    position: relative;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.mainBody{
+    position: relative;
+}
+
+@media screen and (max-width:480px){
+    .left{
+        display: none;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .mainBody{
+        width : 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo{
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: blue;
+        margin-top: 1.5rem;
+        margin-bottom: 3.0rem;
+        background: url('../../../public/icon.jpg') no-repeat;
+        background-size: contain;
+    }
+
+    .header{
+        font-size: 24px;
+        font-family: monospace;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttons{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputs{
+        position: relative;
+        width : 100%;
+        display: flex;
+        height: 34px;
+        flex-direction: column;
+        outline: 1px solid blue;
+        box-sizing: border-box;
+        margin: 0.5rem;
+        border-radius: 2px;
+    }
+
+    .inputs input{
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        color: black;
+        font-size: 18px;
+    }
+
+    .inputs input::placeholder{
+        color: black;
+        font-size: 18px;
+    }
+
+    .inputs+button{
+        width: 100%;
+        background: blue;
+        color: white;
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        box-sizing: border-box;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .newuser{
+        font-size: 16px;
+        color: black;
+    }
+
+    .newuser span{
+        font-size: 16px;
+        text-decoration: none;
+        color: green;
+    }
+
+    .or{
+        position: relative;
+        display: block;
+        font-size: 18px;
+        color: black;
+        width: 100%;
+        text-align: center;
+    }    
+
+    .or::before{
+        content: "";
+        height: 1px;
+        width: 45%;
+        top: 10px;
+        left: 0px;
+        background-color: grey;
+        position: absolute;
+    }
+
+    .or::after{
+        content: "";
+        height: 1px;
+        width: 45%;
+        top: 10px;
+        right: 0px;
+        background-color: grey;
+        position: absolute;
+    }
+
+    .btn{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        outline: 1px solid grey;
+        margin: 0.5rem;
+        border-radius: 10px;
+    }
+
+    .btn button{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 16px;
+        align-items: center;
+        border-radius: inherit;
+        padding: 2px;
+    }
+
+    .btn button span{
+        color: black;
+        font-size: 18px;
+        height: 100%;
+    }
+}

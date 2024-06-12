@@ -32,5 +32,7 @@ const firestore = getFirestore(app);
 
 export {
   auth,
-  firestore
+  firestore,
+  app,
+  firebaseConfig
 }

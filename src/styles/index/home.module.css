@@ -1,0 +1,63 @@
+.body{
+    background-color: white;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    padding-top: 2.5rem;
+}
+
+.header{
+    position: fixed;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    background-color: grey;
+    z-index: 1;
+    height: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.header div span{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.left{
+    height: 100vh;
+    background: white;
+    outline: 1px solid black;
+    width: 200px
+}
+
+.right{
+    height: 100vh;
+    width: 300px;
+    outline: 1px;
+}
+
+.middle{
+    width: calc(100vw - 400px);
+    height: auto;
+    min-height: 100vh;
+    padding: 5px;
+}
+
+@media screen and (max-width:480px){
+    .main{
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        padding: 5px;
+        padding-bottom: 2.5rem;
+    }
+}

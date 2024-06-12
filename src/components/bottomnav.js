@@ -16,7 +16,7 @@ export default function BottomNav(){
                 {
                     position: 'fixed',
                     bottom:'0px',
-                    width:'99vw',
+                    width:'100%',
                     backgroundColor:'transparent',
                     outline:'1px solid black',
                     boxSizing:'border-box',

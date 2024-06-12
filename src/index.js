@@ -20,6 +20,9 @@ import AcademicsExplore from './page/academicExplore'
 import AcademicsDashboard from './page/academicsDashboard'
 import CreateAccount from './page/signup';
 
+import LogIn from './page/index/login';
+import * as HomeV2 from './page/social/home/home';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
@@ -39,6 +42,9 @@ root.render(
       <Route path='/post/details' element={<PostDetails />}/>
       <Route path='/post/compose' element={<PostCompose />}/>
       
+
+      <Route path='/v02/login' element={<LogIn />}/>
+      <Route path='/v2/home' element={<HomeV2.default />}/>
     </Routes>
   </Router>
 );
