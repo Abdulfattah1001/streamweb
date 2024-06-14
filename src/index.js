@@ -7,17 +7,17 @@ import reportWebVitals from './reportWebVitals';
 
 import App from './App';
 import Login from './page/login';
-import Home from './page/home';
-import Message from './page/message';
+// import Home from './page/home';
+// import Message from './page/message';
 import Profile from './page/profile';
 import Settings from './page/settings';
-import Academics from './page/academics';
-import Notification from './page/notification';
+// import Academics from './page/academics';
+// import Notification from './page/notification';
 import PostDetails from './page/post_details';
 import PostCompose from './page/post_compose';
 import MessageCompose from './page/messageCompose';
-import AcademicsExplore from './page/academicExplore';
-import AcademicsDashboard from './page/academicsDashboard';
+// import AcademicsExplore from './page/academicExplore';
+// import AcademicsDashboard from './page/academicsDashboard';
 import CreateAccount from './page/signup';
 
 import LogIn from './page/index/login';
@@ -34,7 +34,7 @@ root.render(
     <Routes>
       <Route path='/signup' element={<CreateAccount />}/>
       <Route path='/' element={<App />} />
-      {/* <Route path='/login' element={<Login />} /> */}
+      <Route path='/login' element={<Login />} />
       {/* <Route path='/home' element={<Home />} /> */}
       {/* <Route path='/message' element={<Message />}/> */}
       <Route path='/message/compose' element={<MessageCompose />}/>
@@ -48,7 +48,7 @@ root.render(
       <Route path='/post/compose' element={<PostCompose />}/>
       
 
-      <Route path='/login' element={<LogIn />}/>
+      {/* <Route path='/login' element={<LogIn />}/> */}
       <Route path='/home' element={<HomeV2.default />}/>
       <Route path="/message" element={<RecentMessaageList />} />
       <Route path="/notification" element={<Notifications />} />

@@ -16,6 +16,7 @@ export default function Home(){
     let navigate = useNavigate();
     /**
      * @type {Post} posts
+     * @property {Post}
      */
     let [posts, setPosts] = useState();
     

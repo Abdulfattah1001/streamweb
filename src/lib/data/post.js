@@ -8,6 +8,7 @@ class Post{
      * @constructor
      * @param {object} post 
      * @param {string} author_name
+     * @public
      */
     constructor(post){
         /**
