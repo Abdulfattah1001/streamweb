@@ -1,9 +1,11 @@
 import { Home, Logout,SchoolOutlined, Settings } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import styles from '../../styles/index/navbar.module.css';
+import { useNavigate } from "react-router-dom";
 
 export default function AndroidNavBar(props){
     let user = props.props;
+    let navigate = useNavigate();
 
     return (
         <div className={styles.container}>
@@ -15,15 +17,15 @@ export default function AndroidNavBar(props){
                     }
                 }/>
                 <div>
-                    <span>{user.displayName}</span>
-                    <span>{user.email}</span>
+                    <span>{user && user.displayName}</span>
+                    <span>{user && user.email}</span>
                 </div>
             </div>
 
             <div className={styles.list}>
                 <ul>
                     <li><button><Home /> <span>Home</span></button></li>
-                    <li><button><SchoolOutlined /> <span>Academics</span></button></li>
+                    <li><button onClick={()=>navigate("/v2/academics")}><SchoolOutlined /> <span>Academics</span></button></li>
                     <li><button><Settings /> <span>Settings</span></button></li>
                     <li><button><Logout /> <span>Log Out</span></button></li>
                 </ul>

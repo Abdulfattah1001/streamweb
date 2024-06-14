@@ -1,0 +1,9 @@
+.body{
+    background: white;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-top: 2.5rem;
+}

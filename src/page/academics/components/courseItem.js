@@ -1,6 +1,6 @@
-import styles from '../styles/course.module.css';
+import styles from '../../../styles/index/coursecard.module.css';
 
-export default function CourseCardDisplay(course){
+export default function CourseItem(course){
     course = course.course;
     return (
         <div>
@@ -17,7 +17,7 @@ export default function CourseCardDisplay(course){
                     </div>
 
                     <div className={styles.logo}>
-                        <img src={"2.jpeg"}/>
+                        <img src={course.course_thumbnail}/>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,33 @@
+.messageListWrapper{
+    width: 100vw;
+    height: auto;
+}
+
+.contentWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    flex-grow: 1;
+}
+
+.content span:first-child{
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: bold;
+    color: black;
+}
+
+.content span:last-child{
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+
+.date{
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+}

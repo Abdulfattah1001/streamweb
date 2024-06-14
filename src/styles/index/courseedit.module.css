@@ -1,0 +1,93 @@
+.body{
+    position: relative;
+    background: white;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+}
+
+.left{
+    width: 25vw;
+    height: 100vh;
+    background: grey;
+    padding: 5px;
+}
+
+.left ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.left ul li{
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: red;
+}
+
+
+.right{
+    width: 25vw;
+    height: 100vh;
+    background: grey;
+}
+
+.main{
+    width: 50vw;
+    height: auto;
+    min-height: 100vh;
+    background-color: white;
+    padding: 5px;
+}
+
+.main div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.inputwrapper{
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    outline: 1px solid black;
+}
+
+.inputwrapper input{
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    padding: 10px;
+    border-radius: inherit;
+    outline: 0px;
+    font-size: 18px;
+}
+
+.inputwrapper input::placeholder{
+    color: black;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+.inputwrapper select{
+    width: 100%;
+}
+
+.inputwrapper .textArea::placeholder{
+    color: black;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+
+.textArea{
+    width: 100%;
+    border: 0px;
+    outline: 0px;
+    font-size: 18px;
+    padding: 5px;
+}

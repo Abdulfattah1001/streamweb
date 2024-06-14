@@ -14,7 +14,11 @@ import Header from "../../components/header";
 
 export default function Home(){
     let navigate = useNavigate();
+    /**
+     * @type {Post} posts
+     */
     let [posts, setPosts] = useState();
+    
     let [open, setOpen] = useState(false);
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
     let [user, setUser] = useState();
@@ -44,7 +48,7 @@ export default function Home(){
     if(posts){
         return (
             <section className={styles.body}>
-                <Header props={onToggleNavBar} />
+                <Header props={onToggleNavBar} title={"Stream"}/>
                 <div>
                     { screenWidth > 480 ? <TabletNavBar /> : null }
                 </div>

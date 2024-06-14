@@ -1,19 +1,28 @@
 import { Avatar, ListItem } from "@mui/material";
 
+/**
+ * @param {object} props 
+ * @returns {React.Component}
+ */
 export default function RecentMessageItem(props){
+    /**
+     * @type {Message}
+     */
     const message = props.message;
 
     return (
-        <ListItem>
-            <div>
-                <Avatar />
+        <div>
+            <ListItem>
                 <div>
-                    <span>{message.author_name}</span>
-                    <span>{message.content}</span>
-                </div>
+                    <Avatar />
+                    <div >
+                        <span>Abdulfattah</span>
+                        <span>last message</span>
+                    </div>
 
-                <span>{message.date}</span>
-            </div>
-        </ListItem>
+                    <span>2024-06-12</span>
+                </div>
+            </ListItem>
+        </div>
     )
 }
