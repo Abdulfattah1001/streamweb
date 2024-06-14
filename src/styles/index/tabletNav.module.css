@@ -1,0 +1,61 @@
+.container{
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    background-color: red;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+}
+
+.userInfo div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+    margin-top: 50px;
+}
+
+.items{
+    position: relative;
+    width: 100%;
+    padding: 0px;
+}
+
+.items ul{
+    position: relative;
+    list-style: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.items ul li{
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.items ul li button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.items ul li button:hover{
+    cursor: pointer;
+}
+
+.items ul li button span{
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+}

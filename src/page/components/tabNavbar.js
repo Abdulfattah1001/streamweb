@@ -1,26 +1,30 @@
 import { Home, Logout, Message, NotificationAdd, SchoolOutlined, Settings } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
-import styles from '../../styles/navbar.module.css';
+import styles from '../../styles/index/tabletNav.module.css';
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase.config";
 
 export default function TabletNavBar(){
+    let navigate = useNavigate();
+
     return (
-        <div>
-            <div>
+        <div className={styles.container}>
+            <div className={styles.userInfo}>
                 <Avatar />
                 <div>
-                    <span></span>
-                    <span></span>
+                    <span>Name goes here</span>
+                    <span>email goes here</span>
                 </div>
             </div>
 
-            <div>
+            <div className={styles.items}>
                 <ul>
-                    <li><button><Home /> Home</button></li>
-                    <li><button><Message /> Message</button></li>
-                    <li><button><NotificationAdd /> Notification</button></li>
-                    <li><button><SchoolOutlined /> Academics</button></li>
-                    <li><button><Settings /> Settings</button></li>
-                    <li><button><Logout /> Log Out</button></li>
+                    <li><button onClick={()=>navigate("/home")}><Home /> <span>Home</span></button></li>
+                    <li><button onClick={()=>navigate("/message")}><Message /> <span>Message</span></button></li>
+                    <li><button onClick={()=>navigate("/notification")}><NotificationAdd /><span>Notification</span></button></li>
+                    <li><button onClick={()=>navigate("/academics")}><SchoolOutlined /> <span>Academics</span></button></li>
+                    <li><button onClick={()=>navigate("/settings")}><Settings /><span>Settings</span></button></li>
+                    <li><button onClick={()=>auth.signOut().then(()=>navigate('/'))}><Logout /> <span>Log Out</span></button></li>
                 </ul>
             </div>
 

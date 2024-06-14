@@ -50,7 +50,7 @@ export default function Home(){
         return (
             <section className={styles.body}>
                 <Header props={onToggleNavBar} title={"Stream"}/>
-                <div>
+                <div className={styles.left}>
                     { screenWidth > 480 ? <TabletNavBar /> : null }
                 </div>
 
@@ -64,7 +64,9 @@ export default function Home(){
                     })}
                 </div>
 
-                <div></div>
+                <div className={styles.right}>
+                    <p>RIGHT</p>
+                </div>
 
                 { screenWidth < 480 ? <StreamBottomNavigation/> : null }
             </section>
