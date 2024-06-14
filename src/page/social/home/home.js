@@ -29,7 +29,7 @@ export default function Home(){
                 setPosts(await fetchData(user.uid));
                 setUser(user);
             }else{
-                navigate("/login")
+                navigate("/")
             }
         });
 
