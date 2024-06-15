@@ -8,7 +8,8 @@ export default function StreamBottomNavigation(){
     return (
         <BottomNavigation sx={
             {
-                backgroundColor:'transparent',
+                backgroundColor:'white',
+                zIndex:'100',
                 position:'fixed',
                 bottom:'0px',
                 width:'100%',
@@ -18,9 +19,9 @@ export default function StreamBottomNavigation(){
         value={value}
         onChange={(event, newValue)=>{setValue(newValue)}}
         >
-            <BottomNavigationAction  component={Link} to={'/v2/home'} label="Home" value="/v2/home" icon={<Home />} />
-            <BottomNavigationAction  component={Link} to={'/v2/message'} label="Message" value="/v2/message" icon={<Message />} />
-            <BottomNavigationAction  component={Link} to={'/v2/notification'} label="Notification" value="/v2/notification" icon={<NotificationAdd />} />
+            <BottomNavigationAction  component={Link} to={'/home'} label="Home" value="/home" icon={<Home />} />
+            <BottomNavigationAction  component={Link} to={'/message'} label="Message" value="/message" icon={<Message />} />
+            <BottomNavigationAction  component={Link} to={'/notification'} label="Notification" value="/notification" icon={<NotificationAdd />} />
         </BottomNavigation>
     )
 }

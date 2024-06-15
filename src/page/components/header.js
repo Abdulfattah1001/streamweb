@@ -12,12 +12,7 @@ export default function Header(props){
             </div>
 
             <div>
-                <Search color="secondary" sx={
-                    {
-                        borderColor:'white',
-                        outlineColor:'white',
-                    }
-                } />
+                <Search color="action"/>
             </div>
         </header>
     )

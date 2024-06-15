@@ -44,7 +44,7 @@ export default function RecentMessaageList(){
                 screenWidth < 480 ? <SwipeableDrawer open={open} onClose={()=>{openNavBar(true)}} ><AndroidNavBar props={user} /></SwipeableDrawer> :null
             }
 
-            <div>
+            <div className={styles.messageList}>
                 {
                     messages && messages.map(function(message,index){
                         return (<RecentMessageItem props={message} key={1}/>)

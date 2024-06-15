@@ -1,13 +1,8 @@
-*{
-    color: black;
-}
-
 .body{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    color: black;
-
+    color: red;
     background-color: white;
     position: relative;
     display: flex;
@@ -25,7 +20,6 @@
     display: flex;
     justify-content: center;
     padding-top: 20px;
-
     margin: 0px;
     box-sizing: border-box;
     color: black;
@@ -36,7 +30,6 @@
     margin: 0px;
     box-sizing: border-box;
     color: black;
-
     width: 60px;
     height: 60px;
     border-radius: 30px;

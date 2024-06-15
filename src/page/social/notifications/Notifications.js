@@ -12,6 +12,7 @@ export default function Notifications(){
     let [screenWidth, setScreenWidth] = useState(window.innerWidth);
     let [open, setOpen] = useState(false);
     let [user, setUser] = useState();
+    let [notifications, setNotifications] = useState();
 
     useEffect(function(){
         onAuthStateChanged(auth,async function(user){
@@ -41,7 +42,10 @@ export default function Notifications(){
                     <AndroidNavBar props={user} />
                 </SwipeableDrawer> : null
             }
-            <div></div>
+            <div className={styles.main}>
+                {notifications && <p>Your list of notifications is 1000</p>}
+                {!notifications && <div className={styles.errorText}><p>Nothing to show here</p></div>}
+            </div>
 
             <div></div>
             {screenWidth < 480 ? <StreamBottomNavigation /> : null}

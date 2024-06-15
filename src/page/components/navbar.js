@@ -2,6 +2,7 @@ import { Home, Logout,SchoolOutlined, Settings } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import styles from '../../styles/index/navbar.module.css';
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase.config";
 
 export default function AndroidNavBar(props){
     let user = props.props;
@@ -27,7 +28,7 @@ export default function AndroidNavBar(props){
                     <li><button><Home /> <span>Home</span></button></li>
                     <li><button onClick={()=>navigate("/academics")}><SchoolOutlined /> <span>Academics</span></button></li>
                     <li><button><Settings /> <span>Settings</span></button></li>
-                    <li><button><Logout /> <span>Log Out</span></button></li>
+                    <li><button onClick={()=>auth.signOut().then(()=>navigate("/"))}><Logout /> <span>Log Out</span></button></li>
                 </ul>
             </div>
 

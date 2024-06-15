@@ -5,6 +5,8 @@ import {auth} from './firebase.config';
 import {onAuthStateChanged} from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Apple, Google } from '@mui/icons-material';
+import { Avatar } from '@mui/material';
 
 export default function App(){
 
@@ -23,14 +25,15 @@ export default function App(){
     <section className={style.index}>
       <div className={style.logo}>
         <p>Stream</p>
+        <Avatar src="icon.jpg"/>
       </div>
 
       <div className={style.content}>
         <h2>Streaming the latest event across the globe</h2>
         <div>
           <h3>Join us today</h3>
-          <button><FontAwesomeIcon icon={faGoogle} className={style.icon}/>Sign up with Google</button>
-          <button>Sign up with Apple</button>
+          <button><Google/>Sign up with Google</button>
+          <button> <Apple/>Sign up with Apple</button>
           <span className={style.or}>or</span>
           <button>Create Account</button>
           <p>By signing up, you agree to the Terms of Service and Privacy Policy, including cookies use</p>

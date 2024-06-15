@@ -5,3 +5,27 @@
     min-height: 100vh;
     padding-top: 2.5rem;
 }
+
+.errorText{
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+@media screen and (max-width:480px) {
+    .main{
+        background-color:white;
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .errorText{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

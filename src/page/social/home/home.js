@@ -65,7 +65,6 @@ export default function Home(){
                 </div>
 
                 <div className={styles.right}>
-                    <p>RIGHT</p>
                 </div>
 
                 { screenWidth < 480 ? <StreamBottomNavigation/> : null }

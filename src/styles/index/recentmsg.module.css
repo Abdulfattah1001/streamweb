@@ -1,4 +1,5 @@
 .body{
+    position: relative;
     background: white;
     width: 100vw;
     height: auto;
@@ -6,4 +7,12 @@
     overflow-x: hidden;
     overflow-y: scroll;
     padding-top: 2.5rem;
+}
+
+
+@media screen and (max-width:480px){
+    .messageList{
+        position: relative;
+        margin-top: 1rem;
+    }
 }
