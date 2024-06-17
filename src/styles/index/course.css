@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    outline: 1px solid black;
+    box-sizing: border-box;
+    margin-top: 4rem;
+    border-radius: 10px;
+  }
+
+  .course-thumbnail{
+    width: 420px;
+    height: 320px;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea, select {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .submit{
+    margin: 5px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .new-lesson{
+    width: max-content;
+    border-radius: 10px;
+    align-self: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .new-modules{
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .module, .lesson {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .lesson {
+    margin-left: 20px;
+  }
+  

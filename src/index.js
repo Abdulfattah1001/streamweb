@@ -37,7 +37,7 @@ root.render(
       <Route path='/academics' element={<AcademicsHome />}/>
       <Route path='/academics/explore' element={<CourseProfile />}/>
       <Route path='/academics/dashboard' element={<CourseProfile/>}/>
-      <Route path="/v2/course-creation" element={<CourseCreation />} />
+      <Route path="/course-creation" element={<CourseCreation />} />
     </Routes>
   </Router>
 );
