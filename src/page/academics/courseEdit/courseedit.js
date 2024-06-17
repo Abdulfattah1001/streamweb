@@ -39,7 +39,7 @@ const CourseCreation = () => {
   }
 
   useEffect(function(){
-    getCourses();
+    //getCourses();
   },[])
 
   let [courseThumbnail, setThumbnail] = useState();
@@ -69,6 +69,7 @@ const CourseCreation = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     let thumbnailImg = await uploadImage(courseThumbnail);
+    let course_id = uuid();
     const courseData = {
       title: courseTitle,
       description: courseDescription,
@@ -81,7 +82,8 @@ const CourseCreation = () => {
    const courseRef = await addDoc(collection(firestore,"COURSES"),{
     title:courseData["title"],
     description:courseData["description"],
-    thumbnail:courseData["thumbnail"]
+    thumbnail:courseData["thumbnail"],
+    id:course_id
    });
 
    for(const modules of courseData["modules"]){
