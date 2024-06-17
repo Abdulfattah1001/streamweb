@@ -80,7 +80,8 @@ const CourseCreation = () => {
 
    const courseRef = await addDoc(collection(firestore,"COURSES"),{
     title:courseData["title"],
-    description:courseData["description"]
+    description:courseData["description"],
+    thumbnail:courseData["thumbnail"]
    });
 
    for(const modules of courseData["modules"]){
