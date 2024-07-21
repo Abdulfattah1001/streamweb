@@ -44,11 +44,11 @@ export default  function NavBar(){
                 <ul>
                     <li>Home</li>
                     
-                    <li onClick={()=>{navigate("/academics",{
+                    {/**<li onClick={()=>{navigate("/academics",{
                         state:{
                             "user":Object(user)
                         }
-                    })}}>Academics</li>
+                    })}}>Academics</li>*/}
 
                     <li>Settings</li>
                     <li onClick={logOut}>Log out</li>

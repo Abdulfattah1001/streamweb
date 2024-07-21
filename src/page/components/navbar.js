@@ -26,7 +26,7 @@ export default function AndroidNavBar(props){
             <div className={styles.list}>
                 <ul>
                     <li><button><Home /> <span>Home</span></button></li>
-                    <li><button onClick={()=>navigate("/academics")}><SchoolOutlined /> <span>Academics</span></button></li>
+                    {/* <li><button onClick={()=>navigate("/academics")}><SchoolOutlined /> <span>Academics</span></button></li> */}
                     <li><button><Settings /> <span>Settings</span></button></li>
                     <li><button onClick={()=>auth.signOut().then(()=>navigate("/"))}><Logout /> <span>Log Out</span></button></li>
                 </ul>

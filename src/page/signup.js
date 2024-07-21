@@ -8,11 +8,17 @@ import * as firebaseui from 'firebaseui';
 import firebase from 'firebase/compat/app';
 import 'firebaseui/dist/firebaseui.css';
 import {auth} from '../firebase.config';
+import { createUserAccount } from '../lib/auth/auth_middleware';
 
 
 export default function CreateAccount(){
 
     let [passwordInput, setPasswordInput]=useState(null);
+    let [firstname, setFirstname] = useState('');
+    let [lastname, setLastname] = useState('');
+    let [username, setUsername] = useState('');
+    let [email, setEmail] = useState('');
+    let [password, setPassword] = useState('');
 
     useEffect(function(){
         setPasswordInput(document.getElementById("password"));
@@ -47,8 +53,12 @@ export default function CreateAccount(){
         })
     }
 
-    const continuebtn = ()=>{
-        passwordInput.style.display ='block';
+    // const continuebtn = ()=>{
+    //     passwordInput.style.display ='block';
+    // }
+
+    const signUp = function(){
+        createUserAccount()
     }
 
 
@@ -64,11 +74,17 @@ export default function CreateAccount(){
                 <div>
                     <h1>Create an account</h1>
                 
-                    <input id='email' type='email' placeholder='Email address' required/>
+                    <input id='firstname' type='text' value={firstname} onChange={()=>{setFirstname(event.target.value)}} placeholder='Firstname' required/>
 
-                    <input id='password' type='password' placeholder='Password' required/>
+                    <input id='lastname' type='text' value={lastname} onChange={()=>{setLastname(event.target.value)}} placeholder='Lastname' required/>
 
-                    <button onClick={continuebtn} className={styles.submitbtn}>Continue</button>
+                    <input id='username' type='text' value={username} onChange={()=>{setUsername(event.target.value)}} placeholder='Username' required/>
+
+                    <input id='email' type='email' value={email} onChange={()=>{setEmail(event.target.value)}} placeholder='Email address' required/>
+
+                    <input id='password' type='password' value={password} onChange={()=>{setPassword(event.target.value)}} placeholder='Password' required/>
+
+                    <button onClick={signUp} className={styles.submitbtn}>Sign Up</button>
 
                     <p className={styles.fuser}>Already have an account? <Link to={"/login"} style={
                         {

@@ -22,7 +22,7 @@ export default function TabletNavBar(){
                     <li><button onClick={()=>navigate("/home")}><Home /> <span>Home</span></button></li>
                     <li><button onClick={()=>navigate("/message")}><Message /> <span>Message</span></button></li>
                     <li><button onClick={()=>navigate("/notification")}><NotificationAdd /><span>Notification</span></button></li>
-                    <li><button onClick={()=>navigate("/academics")}><SchoolOutlined /> <span>Academics</span></button></li>
+                    {/* <li><button onClick={()=>navigate("/academics")}><SchoolOutlined /> <span>Academics</span></button></li> */}
                     <li><button onClick={()=>navigate("/settings")}><Settings /><span>Settings</span></button></li>
                     <li><button onClick={()=>auth.signOut().then(()=>navigate('/'))}><Logout /> <span>Log Out</span></button></li>
                 </ul>

@@ -20,6 +20,10 @@ export default function App(){
     })
   },[])
 
+  let createAccountBtn = function(){
+    navigate("/sign-up")
+  }
+
 
   return(
     <section className={style.index}>
@@ -35,7 +39,7 @@ export default function App(){
           <button><Google/>Sign up with Google</button>
           <button> <Apple/>Sign up with Apple</button>
           <span className={style.or}>or</span>
-          <button>Create Account</button>
+          <button onClick={()=>navigate("/sign-up")}>Create Account</button>
           <p>By signing up, you agree to the Terms of Service and Privacy Policy, including cookies use</p>
 
           <h4>Already have an account?</h4>
