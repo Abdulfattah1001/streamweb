@@ -19,7 +19,7 @@
     height: 200px;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 80px;
     margin: 0px;
     box-sizing: border-box;
     color: black;
@@ -79,16 +79,19 @@
     border: 0px;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    outline: 1px solid green;
+    outline: 1px solid black;
     font-size: 18px;
     padding: 5px;
+    border-radius: 10px;
 }
 
-#password{
-    display: none;
-}
 
-.fuser{font-size: 18px; color: black;}
+.fuser{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
 
 .link{
     padding: 0px;

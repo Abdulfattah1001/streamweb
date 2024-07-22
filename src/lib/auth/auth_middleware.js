@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import {auth} from './firebase.config';
+import {auth} from '../../firebase.config';
 
 async function getSignState(){
     onAuthStateChanged(auth, (user)=>{
@@ -16,7 +16,7 @@ async function getSignState(){
  */
 export async function createUserAccount(firstname, lastname, username, email, password){
     try {
-        const response = await fetch("https://stream-serve.com/api/authentication/sign-up",{
+        const response = await fetch("https://stream-serve.onrender.com/api/authentication/sign-up",{
             method: 'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -30,12 +30,12 @@ export async function createUserAccount(firstname, lastname, username, email, pa
             })
         })
         const data = await response.json();
-        if(data["status"] == 202){
+        if(data["status_code"] == 202){
             return data["payload"]
         }else{
-            window.alert('Unable to create account')
+            window.alert(`Unable to create account ${data["status_message"]}`)
         }
     } catch (error) {
-        window.alert('Error Occured')
+        window.alert(`Error occured ${error.message}`)
     }
 }

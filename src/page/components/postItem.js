@@ -1,16 +1,24 @@
 import { Comment, Favorite, Share,Repeat,MoreVertOutlined } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import styles from '../../styles/index/postitem.module.css';
+import { useNavigate } from "react-router-dom";
 
 export default function PostItem(props){
     /**
      * @field {Post} post
      */
     const post = props.props;
+    let navigate = useNavigate();
+
+    const navigateToPostDetails = function(postObject){
+        navigate(`/posts/${postObject["post_id"]}`, {
+            props: postObject
+        })
+    }
 
     return (
         <div className={styles.container}>
-            <div className={styles.postHeader}>
+            <div onClick={()=>navigateToPostDetails(post)} className={styles.postHeader}>
                 <Avatar src={post.author_image} />
                 <div className={styles.postAuthor}>
                     <span>{post.author_name}</span>

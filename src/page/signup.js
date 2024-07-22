@@ -12,8 +12,6 @@ import { createUserAccount } from '../lib/auth/auth_middleware';
 
 
 export default function CreateAccount(){
-
-    let [passwordInput, setPasswordInput]=useState(null);
     let [firstname, setFirstname] = useState('');
     let [lastname, setLastname] = useState('');
     let [username, setUsername] = useState('');
@@ -21,8 +19,8 @@ export default function CreateAccount(){
     let [password, setPassword] = useState('');
 
     useEffect(function(){
-        setPasswordInput(document.getElementById("password"));
-        document.getElementById("password").style.display='none'
+        // setPasswordInput(document.getElementById("password"));
+        // document.getElementById("password").style.display='none'
     },[])
 
 
@@ -53,10 +51,6 @@ export default function CreateAccount(){
         })
     }
 
-    // const continuebtn = ()=>{
-    //     passwordInput.style.display ='block';
-    // }
-
     const signUp = function(){
         createUserAccount()
     }
@@ -74,15 +68,15 @@ export default function CreateAccount(){
                 <div>
                     <h1>Create an account</h1>
                 
-                    <input id='firstname' type='text' value={firstname} onChange={()=>{setFirstname(event.target.value)}} placeholder='Firstname' required/>
+                    <input id='firstname' type='text' value={firstname} onChange={(event)=>{setFirstname(event.target.value)}} placeholder='Firstname' required/>
 
-                    <input id='lastname' type='text' value={lastname} onChange={()=>{setLastname(event.target.value)}} placeholder='Lastname' required/>
+                    <input id='lastname' type='text' value={lastname} onChange={(event)=>{setLastname(event.target.value)}} placeholder='Lastname' required/>
 
-                    <input id='username' type='text' value={username} onChange={()=>{setUsername(event.target.value)}} placeholder='Username' required/>
+                    <input id='username' type='text' value={username} onChange={(event)=>{setUsername(event.target.value)}} placeholder='Username' required/>
 
-                    <input id='email' type='email' value={email} onChange={()=>{setEmail(event.target.value)}} placeholder='Email address' required/>
+                    <input id='email' type='email' value={email} onChange={(event)=>{setEmail(event.target.value)}} placeholder='Email address' required/>
 
-                    <input id='password' type='password' value={password} onChange={()=>{setPassword(event.target.value)}} placeholder='Password' required/>
+                    <input id='password' type='password' value={password} onChange={(event)=>{setPassword(event.target.value)}} placeholder='Password' required/>
 
                     <button onClick={signUp} className={styles.submitbtn}>Sign Up</button>
 

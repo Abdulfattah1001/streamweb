@@ -7,7 +7,7 @@ import StreamBottomNavigation from "../../components/bottomNav";
 import { SwipeableDrawer } from "@mui/material";
 import AndroidNavBar from "../../components/navbar";
 import TabletNavBar from "../../components/tabNavbar";
-import fetchData from '../../../lib/utilities/posts';
+import {fetchData} from '../../../lib/utilities/posts';
 import { useNavigate } from "react-router-dom";
 import styles from '../../../styles/index/home.module.css';
 import Header from "../../components/header";
