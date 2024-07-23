@@ -3,7 +3,7 @@
  * @returns {Promise<[Post]>}
  */
 export async function fetchData(uid){
-    const response = await fetch("https://stream-serve.onrender.com/api/post?uid="+uid);
+    const response = await fetch("https://streamsync.org/api/post?uid="+uid);
     
     const json = await response.json();
 

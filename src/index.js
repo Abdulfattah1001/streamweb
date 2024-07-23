@@ -16,6 +16,7 @@ import AcademicsHome from './page/academics/home/academicsHome';
 import CourseProfile from './page/academics/profile/courseprofile';
 import CourseCreation from './page/academics/courseEdit/courseedit';
 import PostDetails from './page/social/post/postDetails';
+import PrivacyPolicy from './page/policy/privacy_policy';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
       <Route path='/sign-up' element={<CreateAccount />}/>
       <Route path='/' element={<App />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/policy-privacy' element={<PrivacyPolicy />} />
 
       <Route path='/home' element={<HomeV2.default />}/>
       <Route path="/message" element={<RecentMessaageList />} />
