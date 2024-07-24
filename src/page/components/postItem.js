@@ -2,6 +2,8 @@ import { Comment, Favorite, Share,Repeat,MoreVertOutlined } from "@mui/icons-mat
 import { Avatar } from "@mui/material";
 import styles from '../../styles/index/postitem.module.css';
 import { useNavigate } from "react-router-dom";
+import {useState} from 'react';
+import {BottomSheet} from 'react-spring-bottom-sheet';
 
 export default function PostItem(props){
     /**
@@ -9,20 +11,23 @@ export default function PostItem(props){
      */
     const post = props.props;
     let navigate = useNavigate();
+    let [open, setOpen] = useState(false);
 
     const navigateToPostDetails = function(postObject){
         navigate(`/posts/${postObject["post_id"]}`, {
-            props: postObject
+            state:{
+                post:postObject
+            }
         })
     }
 
     return (
-        <div className={styles.container}>
-            <div onClick={()=>navigateToPostDetails(post)} className={styles.postHeader}>
+        <div onClick={()=>navigateToPostDetails(post)} className={styles.container}>
+            <div className={styles.postHeader}>
                 <Avatar src={post.author_image} />
                 <div className={styles.postAuthor}>
-                    <span>{post.author_name}</span>
-                    <span>{post.author_username}</span>
+                    <span>{post.name}</span>
+                    <span>{`@${post.username}`}</span>
                 </div>
                 <MoreVertOutlined/>
             </div>

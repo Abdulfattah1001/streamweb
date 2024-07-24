@@ -4,13 +4,14 @@ import {auth} from '../../../firebase.config';
 import { onAuthStateChanged } from "firebase/auth";
 import PostItem from "../../components/postItem";
 import StreamBottomNavigation from "../../components/bottomNav";
-import { SwipeableDrawer } from "@mui/material";
+import { Fab, SwipeableDrawer } from "@mui/material";
 import AndroidNavBar from "../../components/navbar";
 import TabletNavBar from "../../components/tabNavbar";
 import {fetchData} from '../../../lib/utilities/posts';
 import { useNavigate } from "react-router-dom";
 import styles from '../../../styles/index/home.module.css';
 import Header from "../../components/header";
+import { Add, PostAdd } from "@mui/icons-material";
 
 export default function Home(){
     let navigate = useNavigate();
@@ -67,6 +68,13 @@ export default function Home(){
                 <div className={styles.right}>
                 </div>
 
+                <Fab onClick={()=>navigate("/postcompose")} aria-label="add" size="medium" sx={
+                    {
+                        position:'fixed',
+                        right:'10px',
+                        bottom:'60px'
+                    }
+                }><PostAdd/></Fab>
                 { screenWidth < 480 ? <StreamBottomNavigation/> : null }
             </section>
         )

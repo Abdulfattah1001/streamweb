@@ -1,9 +1,12 @@
-import { ArrowBack, BrowseGalleryOutlined, Camera } from "@mui/icons-material";
+import { Add, ArrowBack, BrowseGalleryOutlined, Camera, Done } from "@mui/icons-material";
 import { Fab, TextareaAutosize } from "@mui/material";
 import { useState } from "react";
 import styles from '../../../styles/index/postCompose.module.css'
+import { useNavigate } from "react-router-dom";
 
-export default function postCompose(){
+export default function PostCompose(){
+    let navigate = useNavigate();
+
     let [postContent,setPostContent] = useState("");
     let [image, setImage] = useState();
     let [video,setVideo] = useState();
@@ -14,7 +17,7 @@ export default function postCompose(){
         <section className={styles.section}>
             <header className={styles.header}>
                 <ul>
-                    <ArrowBack />
+                    <ArrowBack onClick={navigate(-1)} />
                     <span>Post</span>
                 </ul>
                 <ul>
@@ -23,9 +26,15 @@ export default function postCompose(){
                 </ul>
             </header>
             <div className={styles.content}>
-                <TextareaAutosize value={postContent} onChange={(event)=>setPostContent(event.target.value)} placeholder="What's on your mind...?" />
+                <TextareaAutosize className={styles.postinput} value={postContent} onChange={(event)=>setPostContent(event.target.value)} placeholder="What's on your mind...?" />
             </div>
-            <Fab onClick={uploadPostContent} />
+            <Fab onClick={uploadPostContent} size="medium" sx={
+                {
+                    position: 'fixed',
+                    bottom:'10px',
+                    right:'5px'
+                }
+            }><Done/></Fab>
         </section>
     )
 }

@@ -8,14 +8,17 @@
     margin-bottom: 10px;
     box-shadow: 1px 1px 1px grey;
     border-radius: 10px;
+    color: black;
 }
 
 .postHeader{
     display: flex;
+    flex-direction: row;
     width: 100%;
     padding: 2px;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 .postAuthor{
@@ -35,13 +38,21 @@
 .postAuthor span:last-child{
     font-style: italic;
     font-size: 16px;
+    color: black;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
 }
 
 .content p{
     font-size: 16px;
     font-family: sans-serif;
     text-wrap: wrap;
-    line-height: 1rem;
+    line-height: 1.5rem;
 }
 
 .content img{
@@ -52,6 +63,8 @@
 
 
 .postMetrics{
+    position: relative;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

@@ -33,8 +33,10 @@ body{
 
 .metrics{
     display: flex;
+    width: 100%;
+    color:  black;
     flex-direction: row;
-    outline: 1px solid white;
+    outline: 1px solid black;
     margin-bottom: 3px;
     padding: 5px;
     padding-left: 10px;
@@ -48,6 +50,19 @@ body{
     align-items: center;
 }
 
+.author{
+    width: 300px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author_data{
+    display: flex;
+    flex-direction: row;
+}
+
 @media screen and (max-width:480px) {
     .header{
         width: 100vw;
@@ -59,8 +74,9 @@ body{
     .author{
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+        color: black;
+        width:100%;
     }
 
     .authorName{
@@ -68,5 +84,9 @@ body{
         flex-direction: column;
         flex-grow: 1;
         margin-left: 5px;
+    }
+    .content{
+        color: black;
+        line-height: 2.5rem;
     }
 }

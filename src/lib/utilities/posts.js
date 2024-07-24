@@ -18,7 +18,7 @@ export async function getPost(username,uid){
     try {
         const response = await fetch(`https://streamsync.org/api/post/${username}/post/${uid}`);   
         const data = await response.json()
-        window.alert(data)
+        return data['payload']
     } catch (error) {
         window.alert(`Error occured ${error.message}`)
     }

@@ -1,0 +1,44 @@
+section{
+    position: relative;
+    width:  100vw;
+    height: 100vh auto;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    justify-content: flex-start;
+    align-items:center;
+    color:white;
+    outline: 1px solid white;
+    margin-bottom: 10px;
+}
+
+header div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    margin-left: 10px;
+}
+
+header div span:first-child{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+header div span:last-child{
+    font-size: 16px;
+    font-style: italic;
+}
+
+.settingsItem{
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+}

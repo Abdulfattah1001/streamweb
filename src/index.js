@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';
@@ -17,17 +16,24 @@ import CourseProfile from './page/academics/profile/courseprofile';
 import CourseCreation from './page/academics/courseEdit/courseedit';
 import PostDetails from './page/social/post/postDetails';
 import PrivacyPolicy from './page/policy/privacy_policy';
+import Settings from './page/social/settings/settings';
+import PostCompose from './page/social/post/postCompose';
+import UserProfile from './page/social/user/profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
       <Route path='/:username/post/:postId' element={<PostDetails />}/>
+      <Route path='/postcompose' element={<PostCompose />}/>
 
       <Route path='/sign-up' element={<CreateAccount />}/>
       <Route path='/' element={<App />} />
       <Route path='/login' element={<Login />} />
       <Route path='/policy-privacy' element={<PrivacyPolicy />} />
+      <Route path='/settings' element={<Settings />} />
+      <Route path='/postdetails' element={<PostDetails/>} />
+      <Route path='/profile' element={<UserProfile />} />
 
       <Route path='/home' element={<HomeV2.default />}/>
       <Route path="/message" element={<RecentMessaageList />} />

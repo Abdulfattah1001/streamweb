@@ -37,7 +37,7 @@ export default function RecentMessaageList(){
     
     return  (
         <section className={styles.body}>
-            <Header props={openNavBar} title={"Message"}/>
+            <Header callback={openNavBar} title={"Message"}/>
 
             <div></div>
             {

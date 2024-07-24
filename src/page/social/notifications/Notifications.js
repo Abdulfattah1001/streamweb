@@ -33,7 +33,7 @@ export default function Notifications(){
 
     return(
         <section className={styles.body}>
-            <Header props={openNavBar} />
+            <Header  callback={openNavBar} title={"Notifications"}/>
             <div>
                 {screenWidth > 480 ? <TabletNavBar /> : null}
             </div>

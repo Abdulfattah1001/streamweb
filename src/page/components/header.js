@@ -3,16 +3,24 @@ import { Avatar } from "@mui/material";
 import styles from '../../styles/index/home.module.css'
 
 export default function Header(props){
-    let callbackFunction = props.props;
+    let callbackFunction = props.callback;
+    let title = props.title;
     return (
         <header className={styles.header}>
-            <Avatar onClick={()=>{callbackFunction(false)}} />
-            <div>
-                <span>Stream</span>
+        
+            <div className={styles.page_title}>
+                <Avatar onClick={()=>{callbackFunction(false)}} />
+                <span>{title}</span>
             </div>
 
             <div>
-                <Search color="action"/>
+                <Search
+                sx={
+                    {
+                        color:'white',
+                        
+                    }
+                } color="action"/>
             </div>
         </header>
     )

@@ -1,38 +1,41 @@
-import { useParams } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import styles from '../../../styles/index/postDetails.module.css';
 import { Avatar, Divider } from "@mui/material";
 import { Comment, Favorite, MoreVertOutlined, Repeat, Share } from "@mui/icons-material";
 import { useEffect,useState } from "react";
 import { getPost } from "../../../lib/utilities/posts";
 
-export default function PostDetails(postObject){
+export default function PostDetails(){
     /**
      * @type {object}
      */
     let urlParams = useParams();
-    let [post, setPost] = useState();
+    let location = useLocation();
+    let [post, setPost] = useState(location.state.post);
 
     useEffect(function(){
-        if(urlParams!=null){
-            getPost(urlParams["username"],urlParams["postId"]).then((post)=>{
-                setPost(post)
-            }).catch((err)=>{
-                console.log(`Error occured while fetching posts ${err.message}`)
-            })
-        }else{
-            setPost(postObject);
-        }
+        // if(urlParams!=null){
+        //     getPost(urlParams["username"],urlParams["postId"]).then((post)=>{
+        //         setPost(post)
+        //     }).catch((err)=>{
+        //         console.log(`Error occured while fetching posts ${err.message}`)
+        //     })
+        // }else{
+        //     setPost(location.state.post);
+        // }
     },[])
 
     return (
         <section>
             <div className={styles.header}>
                 <div className={styles.author}>
-                    <Avatar src={post.author_image} sizes="medium"/>
+                    <div className={styles.author_data}>
+                        <Avatar src={post.author_image} sizes="medium"/>
 
-                    <div className={styles.authorName}>
-                        <span className={styles.name}>{post.author_name}</span>
-                        <span className={styles.username}>{post.author_username}</span>
+                        <div className={styles.authorName}>
+                            <span className={styles.name}>{post.name}</span>
+                            <span className={styles.username}>{`@${post.username}`}</span>
+                        </div>
                     </div>
 
                     <MoreVertOutlined />

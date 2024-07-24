@@ -13,7 +13,9 @@ export default function StreamBottomNavigation(){
                 position:'fixed',
                 bottom:'0px',
                 width:'100%',
-                outline:'1px solid black'
+                outline:'1px solid black',
+                display: 'flex',
+                flexDirection:'row'
             }
         }
         value={value}
