@@ -5,6 +5,7 @@
 *{
     padding: 0px;
     margin: 0px;
+    color: black;
 }
 
 .index{
@@ -12,6 +13,7 @@
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction: row;
     overflow: hidden;
     background-color: black;
 }
@@ -31,24 +33,29 @@
 }
 
 .content{
+    position: relative;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding-top: 2.5rem;
 }
 
-.content h2{
-    color: white;
-    font-weight: bold;
-    font-size: 2.0rem;
-}
 
 .content div{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 2.5rem;
-    width: 50%;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.content div h2{
+    color: white;
+    font-weight: bold;
+    font-size: 2.0rem;
+    margin-bottom: 2rem;
 }
 
 .content div h3{
@@ -59,11 +66,19 @@
 
 .content div button{
     background: white;
+    display: flex;
+    justify-content: center;
     color: black;
     height: 40px;
+    width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
     font-weight: bold;
+    align-items: center;
+}
+
+.content div button span{
+    margin-left: 10px;
 }
 
 .content div button:hover{
@@ -86,6 +101,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -109,8 +125,12 @@
 
 @media screen and (min-width:480px) and (max-width:840px){
     .index{
+        position: relative;
+        width: 100vw;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .logo{
@@ -119,6 +139,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        margin-top: 2rem;
     }
     
     .logo p{
@@ -130,6 +151,7 @@
     .content{
         position: relative;
         padding: 5px;
+        width: 100%;
     }
     
 

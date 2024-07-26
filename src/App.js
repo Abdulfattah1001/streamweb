@@ -33,11 +33,11 @@ export default function App(){
       </div>
 
       <div className={style.content}>
-        <h2>Streaming the latest event across the globe</h2>
         <div>
+          <h2>Streaming the latest event across the globe</h2>
           <h3>Join us today</h3>
-          <button><Google/>Sign up with Google</button>
-          <button> <Apple/>Sign up with Apple</button>
+          <button><Google/><span>Sign up with Google</span></button>
+          <button> <Apple/><span>Sign up with Apple</span></button>
           <span className={style.or}>or</span>
           <button onClick={()=>navigate("/sign-up")}>Create Account</button>
           <p>By signing up, you agree to the Terms of Service and Privacy Policy, including cookies use</p>

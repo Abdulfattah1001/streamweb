@@ -1,16 +1,15 @@
 import styles from '../../styles/index/privacy.module.css'
 
-
 export default function PrivacyPolicy(){
     return(
-        <section>
+        <section className={styles.body}>
             <div>
                 <span>Updated: June 01, 2024</span>
                 <h1>Usage Policies</h1>
                 <dl>
                     <dd><span className={styles.subheader}>1. Introduction</span></dd>
                     <dt>
-                    <p>Welcome to Stream ("We","us","our"). This Privacy Policy explains how we collect, use, disclose and safeguard your information when you use our social media platform,ncluding our web,mobile applications, and any other related services. By using the services, you agree to the collecttion and use of information in accordance with this policyy.</p>
+                    <p>Welcome to Stream ("We","us","our"). This Privacy Policy explains how we collect, use, disclose and safeguard your information when you use our social media platform,ncluding our web,mobile applications, and any other related services. By using the services, you agree to the collecttion and use of information in accordance with this policy.</p>
                     </dt>
 
                     <dd><span className={styles.subheader}>2. Information We Collect</span></dd>
