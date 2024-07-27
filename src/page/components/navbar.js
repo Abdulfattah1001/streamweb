@@ -1,4 +1,4 @@
-import { Home, Logout,SchoolOutlined, Settings } from "@mui/icons-material";
+import { Assistant, Home, Logout,Message,Notifications,Podcasts,PolicyOutlined,SchoolOutlined, Settings } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import styles from '../../styles/index/navbar.module.css';
 import { useNavigate } from "react-router-dom";
@@ -9,35 +9,27 @@ export default function AndroidNavBar(props){
     let navigate = useNavigate();
 
     return (
-        <div className={styles.container}>
-            <div className={styles.header}>
-                <Avatar sx={
-                    {
-                        height:'70px',
-                        width:'70px'
-                    }
-                }/>
+        <section className={styles.navSection}>
+            <div className={styles.navHeader}>
+                <Avatar />
                 <div>
-                    <span>{user && user.displayName}</span>
-                    <span>{user && user.email}</span>
+                    <span>aminufattah6@gmail.com</span>
+                    <span>Ameen Abdulfattah</span>
                 </div>
             </div>
-
-            <div className={styles.list}>
+            <div className={styles.navList}>
                 <ul>
-                    <li><button><Home /> <span>Home</span></button></li>
-                    {/* <li><button onClick={()=>navigate("/academics")}><SchoolOutlined /> <span>Academics</span></button></li> */}
-                    <li><button onClick={()=>navigate("/profile")}><Settings /> <span>Profile</span></button></li>
-                    <li><button onClick={()=>navigate("/message")}><Settings /> <span>Messages</span></button></li>
-                    <li><button onClick={()=>navigate("/notification")}><Settings /> <span>Notifications</span></button></li>
-                    <li><button onClick={()=>navigate("/settings")}><Settings /> <span>Settings and Privacy</span></button></li>
-                    <li><button onClick={()=>auth.signOut().then(()=>navigate("/"))}><Logout /> <span>Log Out</span></button></li>
+                    <li> <Home /><span>Home</span></li>
+                    <li> <Message /> <span>Message</span></li>
+                    <li> <Notifications /> <span>Notifications</span></li>
+                    <li> <PolicyOutlined /> <span>Policy Privacy</span></li>
+                    {/* <li><span>Academics</span></li> */}
+                    <li> <Settings /> <span>Settings</span></li>
+                    <li> <Podcasts /> <span>Podcast</span></li>
+                    <li> <Assistant /> <span>StreamAI</span></li>
+                    <li> <Logout/> <span>Log Out</span></li>
                 </ul>
             </div>
-
-            <div className={styles.footer}>
-                <span>Stream v0.0.1</span>
-            </div>
-        </div>
+        </section>
     )
 }

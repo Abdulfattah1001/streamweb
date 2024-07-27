@@ -16,8 +16,7 @@ import { Add, PostAdd } from "@mui/icons-material";
 export default function Home(){
     let navigate = useNavigate();
     /**
-     * @type {Post} posts
-     * @property {Post}
+     * @type {Post}
      */
     let [posts, setPosts] = useState();
     
@@ -50,7 +49,7 @@ export default function Home(){
     if(posts){
         return (
             <section className={styles.body}>
-                <Header props={onToggleNavBar} title={"Stream"}/>
+                <Header callback={onToggleNavBar} title={"Stream"}/>
                 <div className={styles.left}>
                     { screenWidth > 480 ? <TabletNavBar /> : null }
                 </div>

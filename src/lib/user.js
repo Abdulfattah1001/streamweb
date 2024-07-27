@@ -1,6 +1,6 @@
 export default class User{
     /**
-     * @param {Object} user 
+     * @param {object} user 
      */
      
     constructor(user){
@@ -15,16 +15,34 @@ export default class User{
     }
 
 
+    /**
+     * @type {string}
+     */
     name;
 
+    /**
+     * @type {string}
+     */
     about;
 
+    /**
+     * @type {string}
+     */
     fisrtname;
 
+    /**
+     * @type {string}
+     */
     lastname;
 
+    /**
+     * @type {string}
+     */
     foreground;
     
+    /**
+     * @type {string}
+     */
     id;
 
     getNames = ()=>{
