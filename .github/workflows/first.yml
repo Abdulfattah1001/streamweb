@@ -1,0 +1,19 @@
+name : My first github implementation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - uses: action/setupnode@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm start
+          
+    
