@@ -22,6 +22,11 @@
     border-bottom: 1px solid white;
 }
 
+.icons{
+    color: white;
+    background: white;
+}
+
 .navHeader div{
     position: relative;
     bottom: 0px;
@@ -56,19 +61,24 @@
     box-sizing: border-box;
 }
 
+
 .navList ul li {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 3rem;
     color: white;
     list-style: none;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
+    padding: 5px;
+    border: 0px;
+    border-bottom: 1px solid grey;
 }
 
 .navList ul li span {
+    color: white;
     margin-left: 5px;
 }

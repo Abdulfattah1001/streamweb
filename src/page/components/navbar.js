@@ -1,5 +1,5 @@
 import { Assistant, Home, Logout,Message,Notifications,Podcasts,PolicyOutlined,SchoolOutlined, Settings } from "@mui/icons-material";
-import { Avatar } from "@mui/material";
+import { Avatar, createTheme } from "@mui/material";
 import styles from '../../styles/index/navbar.module.css';
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase.config";
@@ -19,7 +19,7 @@ export default function AndroidNavBar(props){
             </div>
             <div className={styles.navList}>
                 <ul>
-                    <li> <Home /><span>Home</span></li>
+                    <li> <Home color="primary"/><span>Home</span></li>
                     <li> <Message /> <span>Message</span></li>
                     <li> <Notifications /> <span>Notifications</span></li>
                     <li> <PolicyOutlined /> <span>Policy Privacy</span></li>
@@ -27,6 +27,7 @@ export default function AndroidNavBar(props){
                     <li> <Settings /> <span>Settings</span></li>
                     <li> <Podcasts /> <span>Podcast</span></li>
                     <li> <Assistant /> <span>StreamAI</span></li>
+                    <li> <Assistant /> <span>Dictionary</span></li>
                     <li> <Logout/> <span>Log Out</span></li>
                 </ul>
             </div>
